@@ -726,3 +726,46 @@ html{scroll-behavior:smooth}
   display:none !important;
   visibility:hidden !important;
 }
+
+/* === GitHub Pages white-background fix ===
+   Explicitly paint every non-photo section white so the published page
+   does not inherit dark/transparent areas between optimized artwork slices. */
+html,
+body,
+.exact-header,
+.stations,
+.stations-section,
+.map-section,
+.map-wrap,
+.lower-wrap,
+.line-card,
+.panel,
+.real-nav,
+.nosotros-targets {
+  background-color:#fff !important;
+}
+
+.svgpart,
+.exact-header > img,
+.lower-wrap > img {
+  display:block;
+  background-color:#fff;
+}
+
+/* Remove browser default gaps around images and section boundaries. */
+img{vertical-align:top}
+.exact-header,
+.stations,
+.stations-section,
+.map-section,
+.lower-wrap,
+.svgpart{
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+/* Keep the carousel itself dark only where an image actually fills it. */
+.hero-carousel,
+.hero-carousel .slide{
+  background-color:#111;
+}

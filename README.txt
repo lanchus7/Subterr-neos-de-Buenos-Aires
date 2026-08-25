@@ -93,3 +93,7 @@ GITHUB PAGES OPTIMIZED
 - Esto evita que GitHub rechace la carga por tamaño.
 - La apariencia y las interacciones HTML/JS se mantienen.
 - Subir el CONTENIDO de esta carpeta al repositorio, con index.html en la raíz.
+
+WHITEFIX
+- Fondo blanco forzado en header, estaciones, mapa, lower-wrap y paneles.
+- Se eliminaron huecos visuales de imágenes inline que podían aparecer al publicar en GitHub Pages.
