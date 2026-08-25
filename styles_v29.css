@@ -824,3 +824,65 @@ img,
 .real-nav{
   z-index:60 !important;
 }
+
+/* === V30: FINAL GITHUB VISUAL FIX === */
+
+/* Do NOT paint the whole menu row; that was covering the center of the Subte logo. */
+.real-nav{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+
+/* Keep only the two side white masks that cover the old Illustrator menu words. */
+.exact-header::before,
+.exact-header::after{
+  background:#fff !important;
+}
+
+/* The center logo area must remain completely uncovered. */
+.nav-logo-space{
+  background:transparent !important;
+}
+
+/* White page sections exactly as in the Illustrator mockup. */
+html,
+body,
+.exact-header,
+.stations,
+.map-section,
+.map-wrap,
+.lower-wrap,
+.nosotros-targets,
+.line-card,
+.panel{
+  background:#fff !important;
+  background-color:#fff !important;
+}
+
+/* Published artwork slices are RGB files with white backgrounds.
+   Force their containers and images to remain white too. */
+.svgpart,
+.exact-header > img,
+.lower-wrap > img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  background:#fff !important;
+  background-color:#fff !important;
+}
+
+/* No dark gaps around Tarifas / Horarios. */
+.lower-wrap{
+  margin:0 !important;
+  padding:0 !important;
+  overflow:visible !important;
+}
+.lower-wrap .svgpart{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Only the actual carousel is allowed to use a dark fallback. */
+.hero-carousel{
+  background:#111 !important;
+}
