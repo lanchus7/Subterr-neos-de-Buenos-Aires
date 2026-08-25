@@ -1,0 +1,728 @@
+
+@font-face{font-family:ArchivoWeb;src:local("Archivo Medium"),local("Archivo-Medium"),local("Archivo")}
+@font-face{font-family:ArchivoWeb;src:local("Archivo Bold"),local("Archivo-Bold"),local("Archivo");font-weight:700}
+@font-face{font-family:FrutigerWeb;src:local("Frutiger LT Std 65 Bold"),local("Frutiger LT Std Bold"),local("Frutiger Bold"),local("Frutiger");font-weight:700}
+@font-face{font-family:UniversWeb;src:local("Univers LT Std 65 Bold"),local("UniversLTStd-Bold"),local("Univers Bold"),local("Univers");font-weight:700}
+*{box-sizing:border-box}html,body{margin:0;background:#fff;color:#111}body{font-family:ArchivoWeb,Arial,sans-serif}
+.exact-header img,.svgpart{display:block;width:100%;height:auto}
+
+.hero{position:relative;height:27.5vw;min-height:350px;max-height:560px;background:url("assets/hero.jpg") center 48%/cover no-repeat;color:#fff}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,#0007,#0001 72%)}
+.hero-content{position:absolute;left:17%;top:24%;width:45%}
+.hero h1{margin:0 0 38px;font:700 clamp(44px,4.7vw,76px)/.95 ArchivoWeb,Arial,sans-serif;letter-spacing:-2px}
+.planner{position:relative;width:58%}.pick{position:relative;margin-bottom:12px}
+.pick label{display:block;margin-bottom:4px;font:italic 500 clamp(19px,1.6vw,28px)/1 ArchivoWeb,Arial,sans-serif}
+.pick input{width:100%;height:33px;border:0;border-bottom:3px solid #fff;background:transparent;outline:0;color:#fff;padding:0 2px;font:italic 500 clamp(15px,1.15vw,20px)/1 ArchivoWeb,Arial,sans-serif}
+.pick input::placeholder{color:transparent}.swap{position:absolute;right:-50px;top:52px;border:0;background:transparent;color:#fff;font:400 40px/1 Arial;padding:0}
+.suggest{display:none;position:absolute;left:0;right:-175px;top:64px;z-index:100;background:#fff;color:#111;max-height:310px;overflow:auto;box-shadow:0 7px 22px #0005}
+.suggest.show{display:block}.suggest button{width:100%;border:0;border-bottom:1px solid #eee;background:#fff;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;font:500 14px ArchivoWeb,Arial,sans-serif}
+.suggest button:hover{background:#f2f2f2}.suggest-badges{display:flex;gap:4px}
+.carousel-dots{position:absolute;bottom:9%;left:42%;display:flex;gap:28px}.carousel-dots i{width:15px;height:15px;border-radius:50%;background:#999}.carousel-dots i:first-child{background:#fff}
+
+.badge{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--c);font-family:Arial,sans-serif;font-weight:700;font-style:normal;color:#fff}
+.head-badge{width:50px;height:50px;border:3px solid #fff;background:transparent;font-size:26px;color:#fff}
+.line-card[data-line="H"] .head-badge{border-color:#111;color:#111}
+.combo,.result-badge{width:21px;height:21px;border:2px solid #fff;font-size:10px;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+.badge[style*="#ffd000"]{color:#111}.combos{display:inline-flex;gap:3px;margin-left:5px}
+
+.stations{padding:66px 0 88px}.stations h2{text-align:center;margin:0 0 68px;font:500 clamp(48px,5vw,76px)/1 ArchivoWeb,Arial,sans-serif;letter-spacing:-2px}
+.grid{width:94%;max-width:1500px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:38px 42px;align-items:start}
+.line-tab{width:100%;height:108px;border:0;background:var(--line);color:#fff;padding:0 40px;display:flex;align-items:center;justify-content:space-between;font-family:FrutigerWeb,"Frutiger LT Std",Arial,sans-serif;font-size:clamp(34px,3vw,48px);font-weight:700;line-height:1}
+.line-card[data-line="H"] .line-tab{color:#111}.line-title{display:flex;align-items:center;gap:15px}.chev{width:37px;height:37px;border-right:5px solid currentColor;border-bottom:5px solid currentColor;transform:rotate(45deg) translate(-5px,-5px);transition:.2s}.open .chev{transform:rotate(225deg) translate(-5px,-5px)}
+.panel{display:none;position:relative;border:1px solid #aaa;border-top:0;padding:32px 32px 38px 118px;background:#fff}.open .panel{display:block}.rail{position:absolute;left:97px;top:34px;bottom:38px;width:7px;border-radius:4px;background:var(--line)}.panel ul{list-style:none;margin:0;padding:0}.panel li{position:relative;min-height:34px;display:flex;align-items:center;gap:8px;color:var(--line);font-family:UniversWeb,"Univers LT Std",Arial,sans-serif;font-size:clamp(17px,1.35vw,22px);font-weight:700;line-height:1.15}.panel li:before{content:"";position:absolute;left:-25px;top:50%;transform:translateY(-50%);width:7px;height:7px;border-radius:50%;background:#fff;border:2px solid var(--line)}.line-card[data-line="H"] .panel li{color:#9a7900}
+
+.map-section{padding:58px 0 20px;background:#fff}.map-section h2{text-align:center;margin:0 0 32px;font:500 clamp(36px,3.4vw,54px)/1 ArchivoWeb,Arial,sans-serif;letter-spacing:-1.5px}.map-wrap{width:100%;overflow:visible}.map-wrap img{display:block;width:100%;height:auto;object-fit:contain}
+
+@media(max-width:850px){.hero{height:48vw;min-height:360px}.hero-content{left:10%;top:23%;width:70%}.planner{width:65%}.grid{grid-template-columns:1fr;width:90%}.line-tab{height:82px;font-size:30px}.head-badge{width:42px;height:42px;font-size:22px}.panel{padding-left:88px}.rail{left:67px}}
+
+/* === V11 corrections === */
+html{scroll-behavior:smooth}
+.exact-header{position:relative;background:#fff;overflow:visible}
+.exact-header>img{display:block;width:100%;height:auto}
+
+/* Clickable regions sit over the exact Illustrator header without changing its appearance. */
+.header-hotspots{position:absolute;inset:0;z-index:20;pointer-events:none}
+.nav-hit{position:absolute;display:block;border:0;background:transparent;cursor:pointer;pointer-events:auto}
+.nav-hit:focus-visible{outline:2px solid #ffd000}
+.nav-hit.acces{left:1.3%;top:47%;width:12.3%;height:34%}
+.nav-hit.tarifas{left:16.7%;top:47%;width:7.2%;height:34%}
+.nav-hit.mapas{left:28.6%;top:47%;width:6.1%;height:34%}
+.nav-hit.horarios{left:59.1%;top:47%;width:7.7%;height:34%}
+.nav-hit.nosotros{left:72.1%;top:47%;width:9.2%;height:34%}
+.nav-hit.subtefan{left:84.4%;top:47%;width:8.2%;height:34%}
+
+/* Cover the static open dropdown that was part of the Illustrator mockup. */
+.nosotros-mask{
+  position:absolute;z-index:18;left:72.0%;top:76.5%;width:12.8%;height:23%;
+  background:#fff;pointer-events:none
+}
+.nosotros-menu{
+  display:none;position:absolute;z-index:40;left:72.0%;top:75.5%;width:13%;
+  min-width:160px;background:#dedede;box-shadow:0 3px 10px #0002;
+  font-family:ArchivoWeb,Arial,sans-serif;font-size:13px
+}
+.nosotros-menu.show{display:block}
+.nosotros-menu a{display:block;padding:8px 14px;color:#555;text-decoration:none;border-bottom:1px solid #d2d2d2}
+.nosotros-menu a:hover{background:#cfcfcf;color:#111}
+
+/* Station list typography: deliberately narrower and lighter than previous V10. */
+.panel li{
+  font-family:"Frutiger LT Std 65 Bold","Frutiger LT Std","Frutiger",Arial,sans-serif !important;
+  font-size:clamp(16px,1.18vw,20px) !important;
+  font-weight:700 !important;
+  letter-spacing:-.2px;
+}
+.line-card[data-line="H"] .panel li{color:#111 !important}
+
+/* White keyline on combination badges and predictive badges, as in the Illustrator. */
+.combo,.result-badge{
+  border:2px solid #fff !important;
+  box-shadow:0 0 0 1px rgba(0,0,0,.07);
+}
+
+/* Scroll targets inside the Illustrator lower slice. */
+.lower-wrap{position:relative}
+.lower-anchor{position:absolute;left:0;top:7%;width:1px;height:1px;scroll-margin-top:20px}
+.lower-anchor.lower-horarios{top:52%}
+.map-section,.map-wrap{scroll-margin-top:18px}
+
+/* Invisible destination anchors for Nosotros/Subtefan until those full sections are developed. */
+.nosotros-targets{height:1px;overflow:hidden}
+.nosotros-targets span{display:block;scroll-margin-top:30px}
+
+@media(max-width:850px){
+  .nosotros-menu{font-size:11px;min-width:130px}
+}
+
+/* === V12 corrections === */
+
+/* Click areas now sit tightly on top of the visible words in the Illustrator header. */
+.nav-hit.acces{left:2.15%;top:56.5%;width:9.8%;height:13%}
+.nav-hit.tarifas{left:17.75%;top:56.5%;width:5.6%;height:13%}
+.nav-hit.mapas{left:28.85%;top:56.5%;width:5.1%;height:13%}
+.nav-hit.horarios{left:59.65%;top:56.5%;width:7.1%;height:13%}
+.nav-hit.nosotros{left:72.7%;top:56.5%;width:6.4%;height:13%}
+.nav-hit.subtefan{left:85.7%;top:56.5%;width:7.2%;height:13%}
+
+/* Each column flows independently. Opening A only pushes C/E/P downward,
+   and opening B only pushes D/H downward. */
+.grid{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:42px !important;
+  align-items:start !important;
+}
+.line-column{
+  display:flex;
+  flex-direction:column;
+  gap:38px;
+  min-width:0;
+}
+.line-card{
+  width:100%;
+}
+
+/* On mobile, collapse to one column while preserving the visual order. */
+@media(max-width:850px){
+  .grid{grid-template-columns:1fr !important}
+  .line-column{gap:26px}
+}
+
+/* The station picker may show the complete alphabetic list on click/focus. */
+.suggest{
+  max-height:360px !important;
+}
+
+/* === V13 social links === */
+.social-hit{
+  position:absolute;
+  display:block;
+  z-index:30;
+  pointer-events:auto;
+  background:transparent;
+  border-radius:4px;
+}
+.social-hit:focus-visible{outline:2px solid #ffd000;outline-offset:2px}
+
+/* Tight hitboxes over the actual social icons in the SVG header. */
+.social-hit.instagram{left:58.45%;top:4.0%;width:2.1%;height:18%}
+.social-hit.x-twitter{left:61.65%;top:4.0%;width:2.0%;height:18%}
+.social-hit.facebook{left:64.55%;top:4.0%;width:1.55%;height:18%}
+.social-hit.linkedin{left:67.15%;top:4.0%;width:1.9%;height:18%}
+
+/* === V14: full-word menu hitboxes === */
+/* These are intentionally wider than V13 so every visible letter is clickable. */
+.nav-hit.acces{left:1.95%;top:53.5%;width:10.6%;height:18%}
+.nav-hit.tarifas{left:17.45%;top:53.5%;width:6.2%;height:18%}
+.nav-hit.mapas{left:28.45%;top:53.5%;width:6.0%;height:18%}
+.nav-hit.horarios{left:59.35%;top:53.5%;width:8.1%;height:18%}
+.nav-hit.nosotros{left:72.2%;top:53.5%;width:8.3%;height:18%}
+.nav-hit.subtefan{left:85.2%;top:53.5%;width:8.4%;height:18%}
+
+/* === Real hero carousel === */
+.hero-carousel{
+  position:relative;
+  height:27.5vw;
+  min-height:350px;
+  max-height:560px;
+  overflow:hidden;
+  background:#111;
+}
+.slides{position:absolute;inset:0}
+.slide{
+  position:absolute;inset:0;
+  opacity:0;visibility:hidden;
+  transition:opacity .55s ease, visibility .55s ease;
+  background-image:var(--bg);
+  background-size:cover;
+  background-position:center 48%;
+  color:#fff;
+}
+.slide.active{opacity:1;visibility:visible}
+.slide .shade{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.5),rgba(0,0,0,.06) 72%);
+}
+.slide-copy{
+  position:absolute;
+  left:17%;
+  top:32%;
+  width:48%;
+  z-index:2;
+}
+.slide-copy .eyebrow{
+  margin:0 0 12px;
+  font:500 clamp(12px,1vw,17px)/1 ArchivoWeb,Arial,sans-serif;
+  letter-spacing:.18em;
+}
+.slide-copy h2{
+  margin:0;
+  font:700 clamp(30px,3.2vw,54px)/1.06 ArchivoWeb,Arial,sans-serif;
+  letter-spacing:-1px;
+}
+.hero-carousel .hero-content{
+  position:absolute;
+  left:17%;
+  top:24%;
+  width:45%;
+  z-index:2;
+}
+.hero-carousel .carousel-dots{
+  position:absolute;
+  left:0;right:0;bottom:8%;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  z-index:10;
+}
+.hero-carousel .carousel-dots button{
+  width:15px;height:15px;
+  border:0;border-radius:50%;
+  background:rgba(255,255,255,.48);
+  padding:0;
+  cursor:pointer;
+}
+.hero-carousel .carousel-dots button.active{background:#fff}
+.hero-carousel .carousel-dots button:focus-visible{outline:2px solid #ffd000;outline-offset:3px}
+
+@media(max-width:850px){
+  .hero-carousel{height:48vw;min-height:360px}
+  .slide-copy{left:10%;top:29%;width:70%}
+  .hero-carousel .hero-content{left:10%;top:23%;width:70%}
+}
+
+/* === V15: user-supplied final carousel artworks === */
+.artwork-slide{background:none !important;overflow:hidden}
+.artwork-slide>img{
+  display:block;width:100%;height:100%;
+  object-fit:cover;object-position:center center;
+}
+.artwork-slide::after{
+  content:"";position:absolute;z-index:3;
+  left:37%;right:37%;bottom:5.3%;
+  height:8%;
+  background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.18),rgba(0,0,0,0));
+  pointer-events:none;
+}
+/* Our functional controls stay on top and are the only dots the user interacts with. */
+.hero-carousel .carousel-dots{z-index:20}
+
+/* === V16: carousel behavior fixed === */
+.hero-carousel{
+  position:relative;
+  height:27.5vw;
+  min-height:350px;
+  max-height:560px;
+  overflow:hidden;
+  background:#111;
+}
+.hero-carousel .slides{position:absolute;inset:0}
+.hero-carousel .slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .55s ease, visibility .55s ease;
+}
+.hero-carousel .slide.active{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+}
+.hero-carousel .planner-slide{
+  background:url("assets/hero.jpg") center 48%/cover no-repeat;
+}
+.hero-carousel .artwork-slide{
+  background:#111;
+}
+.hero-carousel .artwork-slide>img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center center;
+}
+/* Hide the decorative dots already baked into the four supplied artworks. */
+.hero-carousel .artwork-slide::after{
+  content:"";
+  position:absolute;
+  left:35%;
+  right:35%;
+  bottom:4%;
+  height:10%;
+  background:linear-gradient(90deg,transparent,rgba(0,0,0,.30) 18%,rgba(0,0,0,.30) 82%,transparent);
+  pointer-events:none;
+}
+.hero-carousel .carousel-dots{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:8%;
+  z-index:50;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+}
+.hero-carousel .carousel-dots button{
+  width:15px;
+  height:15px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.48);
+  cursor:pointer;
+}
+.hero-carousel .carousel-dots button.active{background:#fff}
+
+/* === V17 carousel click fix === */
+#heroCarousel .carousel-dots{
+  pointer-events:auto !important;
+}
+#heroCarousel .carousel-dots button{
+  pointer-events:auto !important;
+  position:relative;
+  z-index:999 !important;
+}
+#heroCarousel .slide{
+  z-index:1;
+}
+#heroCarousel .slide.active{
+  z-index:2;
+}
+#heroCarousel .carousel-dots{
+  z-index:1000 !important;
+}
+
+/* === V18: clean carousel, one dot row only === */
+#heroCarousel .carousel-dots{
+  position:absolute !important;
+  inset:0 !important;
+  display:block !important;
+  z-index:1000 !important;
+  pointer-events:none !important;
+}
+#heroCarousel .carousel-dots button{
+  position:absolute !important;
+  top:84.8% !important;
+  width:18px !important;
+  height:18px !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:50% !important;
+  background:rgba(255,255,255,.48) !important;
+  transform:translate(-50%,-50%) !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+#heroCarousel .carousel-dots button:nth-child(1){left:41.7% !important}
+#heroCarousel .carousel-dots button:nth-child(2){left:45.9% !important}
+#heroCarousel .carousel-dots button:nth-child(3){left:50% !important}
+#heroCarousel .carousel-dots button:nth-child(4){left:54.2% !important}
+#heroCarousel .carousel-dots button:nth-child(5){left:58.3% !important}
+#heroCarousel .carousel-dots button.active{background:#fff !important}
+
+/* On artwork slides, use the dots already baked into the supplied image. */
+#heroCarousel.artwork-active .carousel-dots button{
+  opacity:0 !important;
+  background:transparent !important;
+}
+
+/* Remove the old dark mask that was trying to hide duplicated dots. */
+#heroCarousel .artwork-slide::after{
+  display:none !important;
+  content:none !important;
+}
+
+/* === V19: stronger carousel dot hitboxes === */
+#heroCarousel .carousel-dots button{
+  /* Larger invisible/clickable area without changing the visible dot size */
+  width:26px !important;
+  height:26px !important;
+}
+#heroCarousel:not(.artwork-active) .carousel-dots button::after{
+  content:"";
+  position:absolute;
+  left:50%;top:50%;
+  width:15px;height:15px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:rgba(255,255,255,.48);
+}
+#heroCarousel:not(.artwork-active) .carousel-dots button.active::after{
+  background:#fff;
+}
+#heroCarousel:not(.artwork-active) .carousel-dots button{
+  background:transparent !important;
+}
+#heroCarousel.artwork-active .carousel-dots button{
+  opacity:0 !important;
+  pointer-events:auto !important;
+}
+
+/* === V20: menu hitboxes aligned to the visible words === */
+/* Keep the hit area exactly over the word, with a few pixels of breathing room. */
+.nav-hit.acces{
+  left:1.10% !important;
+  top:43% !important;
+  width:10.75% !important;
+  height:28% !important;
+}
+.nav-hit.tarifas{
+  left:17.75% !important;
+  top:43% !important;
+  width:6.05% !important;
+  height:28% !important;
+}
+.nav-hit.mapas{
+  left:29.65% !important;
+  top:43% !important;
+  width:5.35% !important;
+  height:28% !important;
+}
+.nav-hit.horarios{
+  left:62.55% !important;
+  top:43% !important;
+  width:7.95% !important;
+  height:28% !important;
+}
+.nav-hit.nosotros{
+  left:76.25% !important;
+  top:43% !important;
+  width:8.35% !important;
+  height:28% !important;
+}
+.nav-hit.subtefan{
+  left:90.45% !important;
+  top:43% !important;
+  width:7.05% !important;
+  height:28% !important;
+}
+
+/* === V21: hitboxes centered directly over the visible words === */
+/* Based on the 1536px-wide header screenshot, with generous padding so the
+   entire word — not just the center — is clickable. */
+.nav-hit.tarifas{
+  left:16.9% !important;   /* ~260px */
+  top:38% !important;
+  width:8.2% !important;   /* ~126px */
+  height:38% !important;
+}
+.nav-hit.mapas{
+  left:28.5% !important;   /* ~438px */
+  top:38% !important;
+  width:7.8% !important;   /* ~120px */
+  height:38% !important;
+}
+
+/* Keep all header hitboxes above masks/other overlays. */
+.header-hotspots .nav-hit{
+  z-index:100 !important;
+  pointer-events:auto !important;
+}
+
+/* === V22: TARIFAS click target + destination corrected === */
+
+/* Tight box directly over the visible word TARIFAS. */
+.nav-hit.tarifas{
+  left:17.95% !important;
+  top:42% !important;
+  width:5.85% !important;
+  height:30% !important;
+}
+
+/* Keep MAPAS independent so it cannot overlap the TARIFAS target. */
+.nav-hit.mapas{
+  left:29.85% !important;
+  top:42% !important;
+  width:5.15% !important;
+  height:30% !important;
+}
+
+/* The TARIFAS section begins farther down inside lower.svg than in V21.
+   Move the anchor onto the actual tariff banner, not the preceding map area. */
+.lower-anchor#tarifas{
+  top:15.5% !important;
+  scroll-margin-top:18px;
+}
+
+/* === V23: TARIFAS fixed === */
+
+/* Large, isolated hitbox centered on the full visible word TARIFAS.
+   It cannot overlap MAPAS. */
+.nav-hit.tarifas{
+  left:17.0% !important;
+  top:32% !important;
+  width:8.0% !important;
+  height:48% !important;
+}
+
+/* MAPAS starts much farther to the right, so both targets are fully separate. */
+.nav-hit.mapas{
+  left:28.8% !important;
+  top:32% !important;
+  width:7.0% !important;
+  height:48% !important;
+}
+
+/* lower.svg STARTS with the Tarifas artwork.
+   Therefore #tarifas belongs at the very top of lower-wrap. */
+.lower-anchor#tarifas{
+  top:0 !important;
+  scroll-margin-top:10px !important;
+}
+
+/* === V24: menu destinations fixed === */
+#mapas{scroll-margin-top:10px}
+#tarifas.section-anchor{
+  display:block;
+  position:relative;
+  top:0;
+  height:0;
+  scroll-margin-top:10px;
+}
+
+/* Keep clickable words independent and on top. */
+.nav-hit.acces,
+.nav-hit.tarifas,
+.nav-hit.mapas{
+  z-index:200 !important;
+  pointer-events:auto !important;
+}
+
+/* === V25: real clickable top menu (no more drifting transparent hitboxes) === */
+.exact-header{position:relative;overflow:visible}
+
+/* Hide the static Illustrator menu words only; leave logo and the top social row visible. */
+.nav-row-mask{
+  position:absolute;
+  left:0;
+  right:0;
+  top:43%;
+  height:31%;
+  background:#fff;
+  z-index:30;
+  pointer-events:none;
+}
+
+/* Actual visible menu text. Since the <a> IS the word, every letter/pixel of the word is clickable. */
+.real-nav{
+  position:absolute;
+  left:0;
+  right:0;
+  top:43%;
+  height:31%;
+  z-index:50;
+  display:grid;
+  grid-template-columns:
+    15.5% 11.5% 11.5% 21.5% 13.5% 13.5% 13%;
+  align-items:center;
+  padding:0 1.9%;
+  font-family:ArchivoWeb,"Archivo",Arial,sans-serif;
+  font-size:clamp(12px,1.15vw,19px);
+  font-weight:700;
+  line-height:1;
+}
+.real-nav>a,
+.real-nav .nav-nosotros>button{
+  justify-self:start;
+  display:inline-block;
+  width:auto;
+  padding:7px 0;
+  border:0;
+  background:transparent;
+  color:#111;
+  text-decoration:none;
+  font:inherit;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.real-nav>a:nth-child(2),
+.real-nav>a:nth-child(3){justify-self:start}
+.real-nav .nav-logo-space{width:100%;height:100%;pointer-events:none}
+.real-nav .nav-nosotros{position:relative;justify-self:start}
+.real-nav a:hover,
+.real-nav .nav-nosotros>button:hover{text-decoration:underline}
+
+/* Reuse a real dropdown attached directly below NOSOTROS. */
+.real-nav .nosotros-menu{
+  display:none;
+  position:absolute;
+  left:0;
+  top:100%;
+  min-width:195px;
+  background:#ddd;
+  z-index:200;
+  box-shadow:0 3px 10px rgba(0,0,0,.12);
+  font-family:ArchivoWeb,"Archivo",Arial,sans-serif;
+  font-size:13px;
+  font-weight:400;
+}
+.real-nav .nosotros-menu.show{display:block}
+.real-nav .nosotros-menu a{
+  display:block;
+  padding:8px 14px;
+  color:#555;
+  text-decoration:none;
+  border-bottom:1px solid #d0d0d0;
+}
+.real-nav .nosotros-menu a:hover{background:#ccc;color:#111}
+
+/* Disable the old drifting transparent nav targets entirely. */
+.header-hotspots,
+.nosotros-mask{
+  display:none !important;
+}
+
+/* Social hitboxes stay above the SVG, independent from menu. */
+.social-hotspots{
+  position:absolute;
+  inset:0;
+  z-index:60;
+  pointer-events:none;
+}
+.social-hotspots .social-hit{pointer-events:auto}
+
+/* Explicit navigation destinations */
+#mapas,
+#tarifas,
+#horarios{
+  scroll-margin-top:12px;
+}
+
+/* === V26: restore Subte logo + remove NOSOTROS dropdown === */
+
+/* The old full-width white mask crossed the centered Subte logo.
+   Disable it and cover only the menu-text zones at left/right. */
+.nav-row-mask{
+  display:none !important;
+}
+.exact-header::before,
+.exact-header::after{
+  content:"";
+  position:absolute;
+  top:43%;
+  height:31%;
+  background:#fff;
+  z-index:30;
+  pointer-events:none;
+}
+.exact-header::before{
+  left:0;
+  width:39.5%;
+}
+.exact-header::after{
+  right:0;
+  width:39.5%;
+}
+
+/* Keep the real HTML menu above those side masks. */
+.real-nav{
+  z-index:50 !important;
+}
+
+/* NOSOTROS is now a normal link, with no dropdown. */
+.real-nav .nav-nosotros,
+.real-nav .nosotros-menu{
+  display:none !important;
+}
+
+/* === V27: restore symmetric navigation spacing === */
+
+/* Side masks preserve the original centered Subte logo. */
+.exact-header::before{
+  left:0 !important;
+  width:40% !important;
+}
+.exact-header::after{
+  right:0 !important;
+  width:40% !important;
+}
+
+/* Use two symmetric 3-column groups around a fixed central logo gap.
+   Columns: A / Tarifas / Mapas | LOGO | Horarios / Nosotros / Subtefan */
+.real-nav{
+  left:0 !important;
+  right:0 !important;
+  padding:0 1.85% !important;
+  display:grid !important;
+  grid-template-columns:
+    1fr 1fr 1fr
+    1.22fr
+    1fr 1fr 1fr !important;
+  column-gap:0 !important;
+  align-items:center !important;
+}
+
+/* Center every word inside its own equal-width slot. */
+.real-nav > a{
+  justify-self:center !important;
+  text-align:center !important;
+}
+
+/* Keep outer words aligned naturally with the visual margins. */
+.real-nav > a:nth-child(1){justify-self:start !important;}
+.real-nav > a:last-child{justify-self:end !important;}
+
+/* The central blank column is exactly the logo zone. */
+.real-nav .nav-logo-space{
+  grid-column:4 !important;
+  width:100% !important;
+}
+
+/* Explicit positions because NOSOTROS is now a normal link. */
+.real-nav > a:nth-child(1){grid-column:1 !important;} /* Accesibilidad */
+.real-nav > a:nth-child(2){grid-column:2 !important;} /* Tarifas */
+.real-nav > a:nth-child(3){grid-column:3 !important;} /* Mapas */
+.real-nav > a:nth-child(5){grid-column:5 !important;} /* Horarios */
+.real-nav > a:nth-child(6){grid-column:6 !important;} /* Nosotros */
+.real-nav > a:nth-child(7){grid-column:7 !important;} /* Subtefan */
+
+/* Kill any residual dropdown visual from older versions. */
+.nosotros-menu,
+.nav-nosotros,
+#nosotrosMenu{
+  display:none !important;
+  visibility:hidden !important;
+}
