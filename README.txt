@@ -97,3 +97,15 @@ GITHUB PAGES OPTIMIZED
 WHITEFIX
 - Fondo blanco forzado en header, estaciones, mapa, lower-wrap y paneles.
 - Se eliminaron huecos visuales de imágenes inline que podían aparecer al publicar en GitHub Pages.
+
+V28 GITHUB CORREGIDA
+- Los slices del Illustrator ahora se aplanan sobre fondo blanco, no negro.
+- Se eliminan las grandes áreas negras que aparecían sólo en GitHub Pages.
+- Se conserva el logo central.
+- Se tapa únicamente el desplegable viejo dibujado en el mockup de NOSOTROS.
+
+V29 CACHEFIX
+- header/mid/lower renombrados con sufijo _v29 para impedir que GitHub Pages o Chrome reutilicen los WebP negros de una versión anterior.
+- styles.css y carousel.js también versionados.
+- index.html incluye meta no-cache.
+- lower_v29.webp fue verificado localmente con fondo blanco/gris correcto.
