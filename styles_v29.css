@@ -2554,3 +2554,166 @@ img,svg{max-width:100%;height:auto}
     max-width:none !important;
   }
 }
+
+/* ============================================================
+   V59 — MOBILE: LOGO + CARRUSEL
+   Ajustes sólo para pantallas chicas.
+   ============================================================ */
+
+@media (max-width:900px){
+
+  /* HEADER: logo más presente y limpio */
+  .exact-header,
+  .mobile-header{
+    height:84px !important;
+    min-height:84px !important;
+  }
+
+  .mobile-header{
+    border-top:3px solid #ffd400 !important;
+  }
+
+  .mobile-logo-link{
+    width:76px !important;
+    height:76px !important;
+  }
+
+  .mobile-subte-logo{
+    width:70px !important;
+    height:70px !important;
+    object-fit:contain !important;
+  }
+
+  .real-nav{
+    top:84px !important;
+  }
+
+  /* CARRUSEL:
+     planner vertical cómodo + slides gráficos con recorte pensado para móvil */
+  .hero-carousel{
+    height:68vh !important;
+    min-height:500px !important;
+    max-height:620px !important;
+    overflow:hidden !important;
+    background:#111 !important;
+  }
+
+  .hero-carousel .slide{
+    height:100% !important;
+  }
+
+  /* Primer slide: mantener planner completo */
+  .hero-carousel .planner-slide{
+    background-size:cover !important;
+    background-position:center center !important;
+  }
+
+  .hero-content{
+    left:7% !important;
+    top:16% !important;
+    width:86% !important;
+  }
+
+  .hero-content h1{
+    font-size:clamp(34px,8vw,48px) !important;
+    line-height:1.02 !important;
+    margin-bottom:26px !important;
+  }
+
+  /* Slides gráficos: cada uno con foco diferente para conservar texto + imagen */
+  .hero-carousel .artwork-slide > img{
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    object-fit:cover !important;
+  }
+
+  .hero-carousel .slide-desasbestizado > img{
+    object-position:34% center !important;
+  }
+  .hero-carousel .slide-linea-f > img{
+    object-position:34% center !important;
+  }
+  .hero-carousel .slide-bicicletas > img{
+    object-position:38% center !important;
+  }
+  .hero-carousel .slide-renovacion > img{
+    object-position:35% center !important;
+  }
+
+  /* Dots: centrados, más táctiles y separados del borde inferior */
+  #heroCarousel .carousel-dots{
+    left:50% !important;
+    right:auto !important;
+    bottom:5% !important;
+    transform:translateX(-50%) !important;
+    display:flex !important;
+    gap:14px !important;
+    width:auto !important;
+  }
+
+  #heroCarousel .carousel-dots button{
+    position:static !important;
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    min-height:18px !important;
+    padding:0 !important;
+    border-radius:50% !important;
+  }
+}
+
+@media (max-width:600px){
+
+  .exact-header,
+  .mobile-header{
+    height:78px !important;
+    min-height:78px !important;
+  }
+
+  .mobile-logo-link{
+    width:70px !important;
+    height:70px !important;
+  }
+
+  .mobile-subte-logo{
+    width:66px !important;
+    height:66px !important;
+  }
+
+  .real-nav{
+    top:78px !important;
+  }
+
+  .hero-carousel{
+    height:64vh !important;
+    min-height:480px !important;
+    max-height:590px !important;
+  }
+
+  .hero-content{
+    left:8% !important;
+    top:14% !important;
+    width:84% !important;
+  }
+
+  .hero-content h1{
+    font-size:36px !important;
+  }
+
+  .planner{
+    width:84% !important;
+  }
+
+  #heroCarousel .carousel-dots{
+    bottom:4% !important;
+    gap:12px !important;
+  }
+
+  #heroCarousel .carousel-dots button{
+    width:16px !important;
+    height:16px !important;
+    min-width:16px !important;
+    min-height:16px !important;
+  }
+}
