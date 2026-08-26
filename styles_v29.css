@@ -4254,3 +4254,54 @@ img,svg{max-width:100%;height:auto}
 .alert-strip, .status-ticker, .service-ticker {
   display: none !important;
 }
+
+/* ============================================================
+   V76 — DESKTOP: ESTADO DE LA RED MÁS GRANDE
+   Sólo afecta pantallas de escritorio.
+   ============================================================ */
+@media (min-width:901px){
+  .desktop-live-status{
+    padding:30px 7% 0 !important;
+  }
+
+  .desktop-status-grid{
+    max-width:1220px !important;
+    gap:34px !important;
+    margin-bottom:22px !important;
+  }
+
+  .desktop-status-item{
+    min-width:102px !important;
+  }
+
+  .desktop-line-badge{
+    width:52px !important;
+    height:52px !important;
+    min-width:52px !important;
+    min-height:52px !important;
+    font-size:30px !important;
+  }
+
+  .desktop-status-bar{
+    width:48px !important;
+    height:8px !important;
+    margin:11px 0 8px !important;
+  }
+
+  .desktop-status-label{
+    font-size:15px !important;
+    line-height:1.08 !important;
+  }
+
+  .desktop-status-reason{
+    max-width:165px !important;
+    margin-top:7px !important;
+    font-size:12px !important;
+    line-height:1.18 !important;
+  }
+
+  .desktop-live-meta{
+    padding:8px 0 14px !important;
+    font-size:11px !important;
+  }
+}
