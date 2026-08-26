@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="styles_v29.css?v=61" rel="stylesheet"/></head><body>
+<link href="styles_v29.css?v=60" rel="stylesheet"/></head><body>
 <div class="exact-header" id="top">
 <div aria-hidden="true" class="nosotros-cleanup"></div>
 <img alt="Encabezado del sitio" src="header_v29.webp?v=47"/>
@@ -54,16 +54,16 @@
 </div>
 </article>
 <article class="slide artwork-slide slide-desasbestizado" data-slide="1">
-<img alt="Plan de Desasbestizado" src="assets/desasbestizado.png"/>
+<img alt="Plan de Desasbestizado" data-desktop-src="assets/desasbestizado.png" data-mobile-src="assets/desasbestizado_mobile.webp" src="assets/desasbestizado.png"/>
 </article>
 <article class="slide artwork-slide slide-linea-f" data-slide="2">
-<img alt="Nueva Línea F" src="assets/linea_f.png"/>
+<img alt="Nueva Línea F" data-desktop-src="assets/linea_f.png" data-mobile-src="assets/linea_f_mobile.webp" src="assets/linea_f.png"/>
 </article>
 <article class="slide artwork-slide slide-bicicletas" data-slide="3">
-<img alt="Traslado de bicicletas en el subte" src="assets/bicicletas.png"/>
+<img alt="Traslado de bicicletas en el subte" data-desktop-src="assets/bicicletas.png" data-mobile-src="assets/bicicletas_mobile.webp" src="assets/bicicletas.png"/>
 </article>
 <article class="slide artwork-slide slide-renovacion" data-slide="4">
-<img alt="Plan de Renovación Integral de Estaciones" src="assets/renovacion.png"/>
+<img alt="Plan de Renovación Integral de Estaciones" data-desktop-src="assets/renovacion.png" data-mobile-src="assets/renovacion_mobile.webp" src="assets/renovacion.png"/>
 </article>
 </div>
 <div aria-label="Cambiar slide" class="carousel-dots">
@@ -74,6 +74,22 @@
 <button aria-label="Plan de Renovación Integral" data-go="4" type="button"></button>
 </div>
 </section>
+
+<section aria-label="Estado del servicio" class="mobile-service-status">
+<div class="mobile-service-grid">
+<div class="mobile-service-item"><span class="mobile-line-badge line-a">A</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
+<div class="mobile-service-item" title="Por problemas técnicos."><span class="mobile-line-badge line-b">B</span><span class="mobile-status-bar status-delay"></span><span class="mobile-status-text">Servicio<br/>con demora</span></div>
+<div class="mobile-service-item"><span class="mobile-line-badge line-c">C</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
+<div class="mobile-service-item"><span class="mobile-line-badge line-d">D</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
+<div class="mobile-service-item"><span class="mobile-line-badge line-e">E</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
+<div class="mobile-service-item"><span class="mobile-line-badge line-h">H</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
+<div class="mobile-service-item" title="Por medida de fuerza gremial."><span class="mobile-line-badge line-p">P</span><span class="mobile-status-bar status-interrupted"></span><span class="mobile-status-text">Servicio<br/>interrumpido</span></div>
+</div>
+<div class="mobile-service-alert">
+    Línea A: Congreso y Loria cerradas por obras. / Línea B: Uruguay y Malabia cerradas por obras. / Línea D: Agüero y Plaza Italia cerradas por obras.
+  </div>
+</section>
+<img alt="Novedades" class="mid-mobile-content" src="mid_mobile_content.webp"/>
 <div class="service-reason-wrap"><img alt="Estado del servicio y novedades" class="svgpart service-reason-base" src="mid_v29.webp?v=51"/><button aria-label="Línea B: Por problemas técnicos." class="service-reason-hit service-reason-hit--delay" data-line="B" style="--x:38.25%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea B</strong><span>Por problemas técnicos.</span></span></button><button aria-label="Línea P: Por medida de fuerza gremial." class="service-reason-hit service-reason-hit--interrupted" data-line="P" style="--x:67.35%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea P</strong><span>Por medida de fuerza gremial.</span></span></button></div>
 <section class="stations">
 <h2>ESTACIONES</h2>
@@ -205,4 +221,15 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 });
+</script><script>
+(function(){
+  function applyMobileCarouselAssets(){
+    const mobile = window.matchMedia('(max-width: 600px)').matches;
+    document.querySelectorAll('#heroCarousel .artwork-slide img[data-mobile-src]').forEach(img => {
+      img.src = mobile ? img.dataset.mobileSrc : img.dataset.desktopSrc;
+    });
+  }
+  applyMobileCarouselAssets();
+  window.addEventListener('resize', applyMobileCarouselAssets);
+})();
 </script></body></html>
