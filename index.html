@@ -31,7 +31,7 @@
 <a aria-label="Facebook oficial de BA Subte" class="social-hit facebook" href="https://www.facebook.com/BAsubte/" rel="noopener noreferrer" target="_blank"></a>
 <a aria-label="LinkedIn oficial de Subterráneos de Buenos Aires" class="social-hit linkedin" href="https://www.linkedin.com/company/subteba/" rel="noopener noreferrer" target="_blank"></a>
 </div>
-</div>
+<div class="mobile-header"><a aria-label="Inicio" class="mobile-logo-link" href="#top"><img alt="Subte" class="mobile-subte-logo" src="mobile_subte_logo.png"/></a><button aria-expanded="false" aria-label="Abrir menú" class="mobile-menu-toggle" type="button"><span></span><span></span><span></span></button></div></div>
 <section class="hero-carousel" id="heroCarousel">
 <div class="slides">
 <article class="slide active planner-slide" data-slide="0">
@@ -194,16 +194,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
   btn.addEventListener('click', function(){
     const open = nav.classList.toggle('mobile-open');
+    btn.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('mobile-open');
+      btn.classList.remove('is-open');
       btn.setAttribute('aria-expanded','false');
     });
   });
 });
-</script>
-
-</body></html>
+</script></body></html>
