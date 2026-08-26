@@ -886,3 +886,48 @@ body,
 .hero-carousel{
   background:#111 !important;
 }
+
+/* === V31: COMPLETE SUBTE LOGO ALWAYS ABOVE THE MENU === */
+.logo-v31{
+  position:absolute;
+  z-index:500 !important;
+  left:50%;
+  top:58%;
+  width:8.15%;
+  aspect-ratio:1 / 1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  overflow:hidden;
+  pointer-events:none;
+}
+.logo-v31 img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:transparent !important;
+}
+
+/* Nothing in the rebuilt menu may cover the centered logo. */
+.real-nav,
+.nav-logo-space{
+  background:transparent !important;
+}
+
+/* Hide the old static Illustrator dropdown that is baked into header_v29.webp. */
+.exact-header .nosotros-cleanup{
+  display:block !important;
+  position:absolute !important;
+  z-index:490 !important;
+  left:71.0% !important;
+  top:64% !important;
+  width:13.5% !important;
+  height:36% !important;
+  background:#fff !important;
+  pointer-events:none !important;
+}
+
+/* The live menu text stays above the cleanup patch, but below the logo. */
+.real-nav{
+  z-index:495 !important;
+}
