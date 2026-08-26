@@ -2917,3 +2917,173 @@ img,svg{max-width:100%;height:auto}
     margin-right:7px !important;
   }
 }
+
+/* ============================================================
+   V61 — MOBILE: CARRUSEL + ESTADO DE LÍNEAS
+   Mejora específica para teléfono.
+   ============================================================ */
+
+@media (max-width:600px){
+
+  /* ---------- CARRUSEL ---------- */
+
+  /* Más compacto y menos "gigante" en vertical */
+  .hero-carousel{
+    height:520px !important;
+    min-height:520px !important;
+    max-height:520px !important;
+    background:#111 !important;
+  }
+
+  .hero-carousel .slide{
+    height:520px !important;
+  }
+
+  /* Primer slide */
+  .hero-content{
+    left:7.5% !important;
+    top:13% !important;
+    width:85% !important;
+  }
+
+  .hero-content h1{
+    font-size:34px !important;
+    line-height:1 !important;
+    margin-bottom:24px !important;
+  }
+
+  .planner{
+    width:78% !important;
+  }
+
+  .pick{
+    margin-bottom:14px !important;
+  }
+
+  .pick label{
+    font-size:20px !important;
+    margin-bottom:6px !important;
+  }
+
+  .pick input{
+    height:31px !important;
+    border-bottom-width:2px !important;
+  }
+
+  .swap{
+    right:-42px !important;
+    top:53px !important;
+    font-size:34px !important;
+  }
+
+  /* Slides gráficos:
+     en móvil priorizamos la parte izquierda, donde está el título,
+     pero evitando zoom excesivo */
+  .hero-carousel .artwork-slide > img{
+    width:100% !important;
+    height:520px !important;
+    object-fit:cover !important;
+  }
+
+  .hero-carousel .slide-desasbestizado > img{
+    object-position:30% center !important;
+  }
+
+  .hero-carousel .slide-linea-f > img{
+    object-position:28% center !important;
+  }
+
+  .hero-carousel .slide-bicicletas > img{
+    object-position:31% center !important;
+  }
+
+  .hero-carousel .slide-renovacion > img{
+    object-position:30% center !important;
+  }
+
+  /* Puntos más chicos y abajo */
+  #heroCarousel .carousel-dots{
+    bottom:18px !important;
+    gap:10px !important;
+  }
+
+  #heroCarousel .carousel-dots button{
+    width:13px !important;
+    height:13px !important;
+    min-width:13px !important;
+    min-height:13px !important;
+  }
+
+  /* ---------- ESTADO DE LÍNEAS ---------- */
+
+  /* El artwork desktop se veía demasiado pequeño.
+     En móvil lo convertimos en una franja horizontal scrolleable,
+     conservando tamaño legible. */
+  .service-reason-wrap,
+  .service-status-wrap{
+    width:100% !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+    background:#fff !important;
+  }
+
+  .service-reason-base,
+  .service-status-base{
+    display:block !important;
+    width:820px !important;
+    min-width:820px !important;
+    max-width:none !important;
+    height:auto !important;
+  }
+
+  /* Si la imagen media no está envuelta por status wrapper,
+     conservar igualmente un ancho legible */
+  .svgpart[src*="mid_v29"],
+  img[src*="mid_v29"]{
+    width:820px !important;
+    min-width:820px !important;
+    max-width:none !important;
+  }
+
+  /* Si existen tooltips de estado, deben posicionarse respecto del
+     mismo ancho real que la imagen. */
+  .service-reason-hit,
+  .service-line-hit{
+    z-index:30 !important;
+  }
+
+  .service-reason-tooltip,
+  .service-line-tooltip{
+    min-width:170px !important;
+    max-width:190px !important;
+    font-size:11px !important;
+  }
+}
+
+/* Tablet: un punto intermedio */
+@media (min-width:601px) and (max-width:900px){
+
+  .hero-carousel{
+    height:560px !important;
+    min-height:560px !important;
+    max-height:560px !important;
+  }
+
+  .hero-carousel .slide,
+  .hero-carousel .artwork-slide > img{
+    height:560px !important;
+  }
+
+  .service-reason-wrap,
+  .service-status-wrap{
+    overflow-x:auto !important;
+  }
+
+  .service-reason-base,
+  .service-status-base{
+    width:980px !important;
+    min-width:980px !important;
+    max-width:none !important;
+  }
+}
