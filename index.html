@@ -1,163 +1,149 @@
-<!doctype html><html lang="es"><head>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subte — propuesta interactiva</title><link rel="stylesheet" href="styles_v29.css?v=31"></head><body>
+<!DOCTYPE html>
 
-
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Subte — propuesta interactiva</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="styles_v29.css?v=31" rel="stylesheet"/></head><body>
 <div class="exact-header" id="top">
-  <div class="logo-v31" aria-hidden="true"><img src="logo_v31.webp?v=31" alt=""></div>
-  <div class="nosotros-cleanup" aria-hidden="true"></div>
-  <img src="header_v29.webp?v=31" alt="Encabezado del sitio">
-
-  <!-- Real navigation row: the words themselves are the links -->
-  <div class="nav-row-mask"></div>
-  <nav class="real-nav" aria-label="Navegación principal">
-    <a href="#mapas" data-scroll="mapas">ACCESIBILIDAD</a>
-    <a href="#tarifas" data-scroll="tarifas">TARIFAS</a>
-    <a href="#mapas" data-scroll="mapas">MAPAS</a>
-
-    <span class="nav-logo-space" aria-hidden="true"></span>
-
-    <a href="#horarios" data-scroll="horarios">HORARIOS</a>
-
-    <a href="#nosotros">NOSOTROS</a>
-
-    <a href="#subtefan">SUBTEFAN</a>
-  </nav>
-
-  <!-- Social links remain over their original icons -->
-  <div class="social-hotspots">
-    <a class="social-hit instagram" href="https://www.instagram.com/basubte/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial de BA Subte"></a>
-    <a class="social-hit x-twitter" href="https://x.com/basubte" target="_blank" rel="noopener noreferrer" aria-label="X oficial de BA Subte"></a>
-    <a class="social-hit facebook" href="https://www.facebook.com/BAsubte/" target="_blank" rel="noopener noreferrer" aria-label="Facebook oficial de BA Subte"></a>
-    <a class="social-hit linkedin" href="https://www.linkedin.com/company/subteba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn oficial de Subterráneos de Buenos Aires"></a>
-  </div>
+<div aria-hidden="true" class="nosotros-cleanup"></div>
+<img alt="Encabezado del sitio" src="header_v29.webp?v=47"/>
+<!-- Real navigation row: the words themselves are the links -->
+<div class="nav-row-mask"></div>
+<nav aria-label="Navegación principal" class="real-nav">
+<a data-scroll="mapas" href="#mapas">ACCESIBILIDAD</a>
+<a data-scroll="tarifas" href="#tarifas">TARIFAS</a>
+<a data-scroll="mapas" href="#mapas">MAPAS</a>
+<span aria-hidden="true" class="nav-logo-space"></span>
+<a data-scroll="horarios" href="#horarios">HORARIOS</a>
+<a href="#nosotros">NOSOTROS</a>
+<a href="subvenirs.html">SUBVENIRS</a>
+</nav>
+<!-- Social links remain over their original icons -->
+<div class="social-hotspots">
+<a aria-label="Instagram oficial de BA Subte" class="social-hit instagram" href="https://www.instagram.com/basubte/" rel="noopener noreferrer" target="_blank"></a>
+<a aria-label="X oficial de BA Subte" class="social-hit x-twitter" href="https://x.com/basubte" rel="noopener noreferrer" target="_blank"></a>
+<a aria-label="Facebook oficial de BA Subte" class="social-hit facebook" href="https://www.facebook.com/BAsubte/" rel="noopener noreferrer" target="_blank"></a>
+<a aria-label="LinkedIn oficial de Subterráneos de Buenos Aires" class="social-hit linkedin" href="https://www.linkedin.com/company/subteba/" rel="noopener noreferrer" target="_blank"></a>
 </div>
-
+</div>
 <section class="hero-carousel" id="heroCarousel">
-  <div class="slides">
-    <article class="slide active planner-slide" data-slide="0">
-      <div class="shade"></div>
-      <div class="hero-content">
-        <h1>Planificá tu viaje</h1>
-        <div class="planner">
-          <div class="pick">
-            <label for="origin">Origen</label>
-            <input id="origin" autocomplete="off" placeholder="Escribí una estación">
-            <div class="suggest"></div>
-          </div>
-          <button id="swap" class="swap" type="button" aria-label="Intercambiar origen y destino">⇅</button>
-          <div class="pick">
-            <label for="dest">Destino</label>
-            <input id="dest" autocomplete="off" placeholder="Escribí una estación">
-            <div class="suggest"></div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="slide artwork-slide" data-slide="1">
-      <img src="assets/desasbestizado.png" alt="Plan de Desasbestizado">
-    </article>
-
-    <article class="slide artwork-slide" data-slide="2">
-      <img src="assets/linea_f.png" alt="Nueva Línea F">
-    </article>
-
-    <article class="slide artwork-slide" data-slide="3">
-      <img src="assets/bicicletas.png" alt="Traslado de bicicletas en el subte">
-    </article>
-
-    <article class="slide artwork-slide" data-slide="4">
-      <img src="assets/renovacion.png" alt="Plan de Renovación Integral de Estaciones">
-    </article>
-  </div>
-
-  <div class="carousel-dots" aria-label="Cambiar slide">
-    <button class="active" type="button" data-go="0" aria-label="Planificá tu viaje"></button>
-    <button type="button" data-go="1" aria-label="Plan de Desasbestizado"></button>
-    <button type="button" data-go="2" aria-label="Nueva Línea F"></button>
-    <button type="button" data-go="3" aria-label="Traslado de bicicletas"></button>
-    <button type="button" data-go="4" aria-label="Plan de Renovación Integral"></button>
-  </div>
-</section>
-
-<img src="mid_v29.webp?v=30" class="svgpart" alt="Estado del servicio y novedades">
-
-<section class="stations">
-  <h2>ESTACIONES</h2>
-  <div class="grid">
-    <div class="line-column"><article class="line-card" style="--line:#06afd4" data-line="A">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='A' style='--c:#06afd4'>A</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Plaza de Mayo - Casa Rosada</span><span class='combos'></span></li><li><span>Perú</span><span class='combos'><span class='badge combo' data-line='D' style='--c:#078f76'>D</span><span class='badge combo' data-line='E' style='--c:#922b98'>E</span></span></li><li><span>Piedras</span><span class='combos'></span></li><li><span>Lima</span><span class='combos'><span class='badge combo' data-line='C' style='--c:#0a4bb2'>C</span></span></li><li><span>Sáenz Peña</span><span class='combos'></span></li><li><span>Congreso - Raúl Alfonsín</span><span class='combos'></span></li><li><span>Pasco</span><span class='combos'></span></li><li><span>Alberti</span><span class='combos'></span></li><li><span>Plaza Miserere</span><span class='combos'><span class='badge combo' data-line='H' style='--c:#ffd000'>H</span></span></li><li><span>Loria</span><span class='combos'></span></li><li><span>Castro Barros</span><span class='combos'></span></li><li><span>Río de Janeiro</span><span class='combos'></span></li><li><span>Acoyte</span><span class='combos'></span></li><li><span>Primera Junta</span><span class='combos'></span></li><li><span>Puan</span><span class='combos'></span></li><li><span>Carabobo</span><span class='combos'></span></li><li><span>San José de Flores</span><span class='combos'></span></li><li><span>San Pedrito</span><span class='combos'></span></li></ul></div>
-</article>
-<article class="line-card" style="--line:#0a4bb2" data-line="C">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='C' style='--c:#0a4bb2'>C</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Constitución</span><span class='combos'></span></li><li><span>San Juan</span><span class='combos'></span></li><li><span>Independencia</span><span class='combos'><span class='badge combo' data-line='E' style='--c:#922b98'>E</span></span></li><li><span>Moreno</span><span class='combos'></span></li><li><span>Avenida de Mayo</span><span class='combos'><span class='badge combo' data-line='A' style='--c:#06afd4'>A</span></span></li><li><span>Diagonal Norte</span><span class='combos'><span class='badge combo' data-line='B' style='--c:#f21f32'>B</span><span class='badge combo' data-line='D' style='--c:#078f76'>D</span></span></li><li><span>Lavalle</span><span class='combos'></span></li><li><span>General San Martín</span><span class='combos'></span></li><li><span>Retiro</span><span class='combos'><span class='badge combo' data-line='E' style='--c:#922b98'>E</span></span></li></ul></div>
-</article>
-<article class="line-card" style="--line:#922b98" data-line="E">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='E' style='--c:#922b98'>E</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Retiro</span><span class='combos'><span class='badge combo' data-line='C' style='--c:#0a4bb2'>C</span></span></li><li><span>Catalinas</span><span class='combos'></span></li><li><span>Correo Central</span><span class='combos'></span></li><li><span>Bolívar</span><span class='combos'><span class='badge combo' data-line='A' style='--c:#06afd4'>A</span><span class='badge combo' data-line='D' style='--c:#078f76'>D</span></span></li><li><span>Belgrano</span><span class='combos'></span></li><li><span>Independencia</span><span class='combos'><span class='badge combo' data-line='C' style='--c:#0a4bb2'>C</span></span></li><li><span>San José</span><span class='combos'></span></li><li><span>Entre Ríos - Rodolfo Walsh</span><span class='combos'></span></li><li><span>Pichincha</span><span class='combos'></span></li><li><span>Jujuy</span><span class='combos'><span class='badge combo' data-line='H' style='--c:#ffd000'>H</span></span></li><li><span>General Urquiza</span><span class='combos'></span></li><li><span>Boedo</span><span class='combos'></span></li><li><span>Avenida La Plata</span><span class='combos'></span></li><li><span>José María Moreno</span><span class='combos'></span></li><li><span>Emilio Mitre</span><span class='combos'></span></li><li><span>Medalla Milagrosa</span><span class='combos'></span></li><li><span>Varela</span><span class='combos'></span></li><li><span>Plaza de los Virreyes - Eva Perón</span><span class='combos'></span></li></ul></div>
-</article>
-<article class="line-card" style="--line:#ffb51b" data-line="P">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='P' style='--c:#ffb51b'>P</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Int. Saguier</span><span class='combos'></span></li><li><span>Balbastro</span><span class='combos'></span></li><li><span>Mariano Acosta</span><span class='combos'></span></li><li><span>Somellera</span><span class='combos'></span></li><li><span>Ana María Janer</span><span class='combos'></span></li><li><span>Nuestra Señora de Fátima</span><span class='combos'></span></li><li><span>Fernández de la Cruz</span><span class='combos'></span></li><li><span>Presidente Illia</span><span class='combos'></span></li><li><span>Parque de la Ciudad</span><span class='combos'></span></li><li><span>Cecilia Grierson</span><span class='combos'></span></li><li><span>Escalada</span><span class='combos'></span></li><li><span>Pola</span><span class='combos'></span></li><li><span>Larrazábal</span><span class='combos'></span></li><li><span>Nicolás Descalzi</span><span class='combos'></span></li><li><span>Gabino Ezeiza</span><span class='combos'></span></li><li><span>Ana Díaz</span><span class='combos'></span></li><li><span>Centro Cívico Lugano</span><span class='combos'></span></li><li><span>General Savio</span><span class='combos'></span></li></ul></div>
-</article></div>
-    <div class="line-column"><article class="line-card" style="--line:#f21f32" data-line="B">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='B' style='--c:#f21f32'>B</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Leandro N. Alem</span><span class='combos'></span></li><li><span>Florida</span><span class='combos'></span></li><li><span>Carlos Pellegrini</span><span class='combos'><span class='badge combo' data-line='C' style='--c:#0a4bb2'>C</span><span class='badge combo' data-line='D' style='--c:#078f76'>D</span></span></li><li><span>Uruguay</span><span class='combos'></span></li><li><span>Callao - Maestro Alfredo Bravo</span><span class='combos'></span></li><li><span>Pasteur - AMIA</span><span class='combos'></span></li><li><span>Pueyrredón</span><span class='combos'><span class='badge combo' data-line='H' style='--c:#ffd000'>H</span></span></li><li><span>Carlos Gardel</span><span class='combos'></span></li><li><span>Medrano - Almagro</span><span class='combos'></span></li><li><span>Ángel Gallardo</span><span class='combos'></span></li><li><span>Malabia - Osvaldo Pugliese</span><span class='combos'></span></li><li><span>Dorrego</span><span class='combos'></span></li><li><span>Federico Lacroze</span><span class='combos'></span></li><li><span>Tronador - Villa Ortúzar</span><span class='combos'></span></li><li><span>De los Incas - Parque Chas</span><span class='combos'></span></li><li><span>Echeverría</span><span class='combos'></span></li><li><span>Juan Manuel de Rosas - Villa Urquiza</span><span class='combos'></span></li></ul></div>
-</article>
-<article class="line-card" style="--line:#078f76" data-line="D">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='D' style='--c:#078f76'>D</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Catedral</span><span class='combos'><span class='badge combo' data-line='A' style='--c:#06afd4'>A</span><span class='badge combo' data-line='E' style='--c:#922b98'>E</span></span></li><li><span>9 de Julio</span><span class='combos'><span class='badge combo' data-line='B' style='--c:#f21f32'>B</span><span class='badge combo' data-line='C' style='--c:#0a4bb2'>C</span></span></li><li><span>Tribunales - Teatro Colón</span><span class='combos'></span></li><li><span>Callao</span><span class='combos'></span></li><li><span>Facultad de Medicina</span><span class='combos'></span></li><li><span>Pueyrredón</span><span class='combos'><span class='badge combo' data-line='H' style='--c:#ffd000'>H</span></span></li><li><span>Agüero</span><span class='combos'></span></li><li><span>Bulnes</span><span class='combos'></span></li><li><span>Scalabrini Ortiz</span><span class='combos'></span></li><li><span>Plaza Italia</span><span class='combos'></span></li><li><span>Palermo</span><span class='combos'></span></li><li><span>Ministro Carranza</span><span class='combos'></span></li><li><span>Olleros</span><span class='combos'></span></li><li><span>José Hernández</span><span class='combos'></span></li><li><span>Juramento</span><span class='combos'></span></li><li><span>Congreso de Tucumán</span><span class='combos'></span></li></ul></div>
-</article>
-<article class="line-card" style="--line:#ffd000" data-line="H">
-  <button class="line-tab" type="button" aria-expanded="false">
-    <span class="line-title">Línea <span class='badge head-badge' data-line='H' style='--c:#ffd000'>H</span></span>
-    <span class="chev"></span>
-  </button>
-  <div class="panel"><div class="rail"></div><ul><li><span>Hospitales</span><span class='combos'></span></li><li><span>Parque Patricios</span><span class='combos'></span></li><li><span>Caseros</span><span class='combos'></span></li><li><span>Inclán - Mezquita Al Ahmad</span><span class='combos'></span></li><li><span>Humberto 1°</span><span class='combos'><span class='badge combo' data-line='E' style='--c:#922b98'>E</span></span></li><li><span>Venezuela</span><span class='combos'></span></li><li><span>Once - 30 de Diciembre</span><span class='combos'><span class='badge combo' data-line='A' style='--c:#06afd4'>A</span></span></li><li><span>Corrientes</span><span class='combos'><span class='badge combo' data-line='B' style='--c:#f21f32'>B</span></span></li><li><span>Córdoba</span><span class='combos'></span></li><li><span>Santa Fe - Carlos Jáuregui</span><span class='combos'><span class='badge combo' data-line='D' style='--c:#078f76'>D</span></span></li><li><span>Las Heras</span><span class='combos'></span></li><li><span>Facultad de Derecho - Julieta Lanteri</span><span class='combos'></span></li></ul></div>
-</article></div>
-  </div>
-</section>
-
-<section class="map-section" id="mapas">
-  <h2>ESTADO DE ESCALERAS Y ASCENSORES</h2>
-  <div class="map-wrap"><img src="assets/mapa.png" alt="Mapa completo de la red de Subte y Premetro"></div>
-</section>
-
-<span id="tarifas" class="section-anchor"></span>
-<span id="nosotros" class="section-anchor"></span>
-<div class="lower-wrap">
-  <span class="lower-anchor lower-horarios" id="horarios"></span>
-  <img src="lower_v29.webp?v=30" class="svgpart" alt="Tarifas y horarios">
+<div class="slides">
+<article class="slide active planner-slide" data-slide="0">
+<div class="shade"></div>
+<div class="hero-content">
+<h1>Planificá tu viaje</h1>
+<div class="planner">
+<div class="pick">
+<label for="origin">Origen</label>
+<input autocomplete="off" id="origin" placeholder="Escribí una estación"/>
+<div class="suggest"></div>
 </div>
-<section class="nosotros-targets" aria-hidden="true">
-  <span id="autoridades"></span><span id="historia"></span><span id="tienda"></span><span id="contacto"></span><span id="subtefan"></span>
+<button aria-label="Intercambiar origen y destino" class="swap" id="swap" type="button">⇅</button>
+<div class="pick">
+<label for="dest">Destino</label>
+<input autocomplete="off" id="dest" placeholder="Escribí una estación"/>
+<div class="suggest"></div>
+</div>
+</div>
+</div>
+</article>
+<article class="slide artwork-slide" data-slide="1">
+<img alt="Plan de Desasbestizado" src="assets/desasbestizado.png"/>
+</article>
+<article class="slide artwork-slide" data-slide="2">
+<img alt="Nueva Línea F" src="assets/linea_f.png"/>
+</article>
+<article class="slide artwork-slide" data-slide="3">
+<img alt="Traslado de bicicletas en el subte" src="assets/bicicletas.png"/>
+</article>
+<article class="slide artwork-slide" data-slide="4">
+<img alt="Plan de Renovación Integral de Estaciones" src="assets/renovacion.png"/>
+</article>
+</div>
+<div aria-label="Cambiar slide" class="carousel-dots">
+<button aria-label="Planificá tu viaje" class="active" data-go="0" type="button"></button>
+<button aria-label="Plan de Desasbestizado" data-go="1" type="button"></button>
+<button aria-label="Nueva Línea F" data-go="2" type="button"></button>
+<button aria-label="Traslado de bicicletas" data-go="3" type="button"></button>
+<button aria-label="Plan de Renovación Integral" data-go="4" type="button"></button>
+</div>
 </section>
-
+<div class="service-reason-wrap"><img alt="Estado del servicio y novedades" class="svgpart service-reason-base" src="mid_v29.webp?v=51"/><button aria-label="Línea B: Por problemas técnicos." class="service-reason-hit service-reason-hit--delay" data-line="B" style="--x:38.25%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea B</strong><span>Por problemas técnicos.</span></span></button><button aria-label="Línea P: Por medida de fuerza gremial." class="service-reason-hit service-reason-hit--interrupted" data-line="P" style="--x:67.35%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea P</strong><span>Por medida de fuerza gremial.</span></span></button></div>
+<section class="stations">
+<h2>ESTACIONES</h2>
+<div class="grid">
+<div class="line-column"><article class="line-card" data-line="A" style="--line:#06afd4">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="A" style="--c:#06afd4">A</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Plaza de Mayo - Casa Rosada</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Perú</span><span class="combos"><span class="badge combo" data-line="D" style="--c:#078f76">D</span><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Piedras</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Lima</span><span class="combos"><span class="badge combo" data-line="C" style="--c:#0a4bb2">C</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Sáenz Peña</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Congreso - Raúl Alfonsín</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pasco</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Alberti</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Plaza Miserere</span><span class="combos"><span class="badge combo" data-line="H" style="--c:#ffd000">H</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Loria</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Castro Barros</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Río de Janeiro</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Acoyte</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Primera Junta</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Puan</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Carabobo</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>San José de Flores</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>San Pedrito</span><span class="combos"></span></li></ul></div>
+</article>
+<article class="line-card" data-line="C" style="--line:#0a4bb2">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="C" style="--c:#0a4bb2">C</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Retiro</span><span class="combos"><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>General San Martín</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Lavalle</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Diagonal Norte</span><span class="combos"><span class="badge combo" data-line="B" style="--c:#f21f32">B</span><span class="badge combo" data-line="D" style="--c:#078f76">D</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Avenida de Mayo</span><span class="combos"><span class="badge combo" data-line="A" style="--c:#06afd4">A</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Moreno</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Independencia</span><span class="combos"><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>San Juan</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Constitución</span><span class="combos"></span></li></ul></div>
+</article>
+<article class="line-card" data-line="E" style="--line:#922b98">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="E" style="--c:#922b98">E</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Retiro</span><span class="combos"><span class="badge combo" data-line="C" style="--c:#0a4bb2">C</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Catalinas</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Correo Central</span><span class="combos"><span class="badge combo" data-line="B" style="--c:#f21f32">B</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Bolívar</span><span class="combos"><span class="badge combo" data-line="A" style="--c:#06afd4">A</span><span class="badge combo" data-line="D" style="--c:#078f76">D</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Belgrano</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Independencia</span><span class="combos"><span class="badge combo" data-line="C" style="--c:#0a4bb2">C</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>San José</span><span class="combos"></span></li><li class="station-closed"><span aria-hidden="true" class="station-node"></span><span class="station-label">Entre Ríos - Rodolfo Walsh</span><span aria-label="Estación cerrada por obras de renovación" class="closure-warning" role="img" tabindex="0"><span class="warning-mark">!</span><span class="closure-tooltip">Estación cerrada por obras de renovación.</span></span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pichincha</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Jujuy</span><span class="combos"><span class="badge combo" data-line="H" style="--c:#ffd000">H</span></span></li><li class="station-closed"><span aria-hidden="true" class="station-node"></span><span class="station-label">General Urquiza</span><span aria-label="Estación cerrada por obras de renovación" class="closure-warning" role="img" tabindex="0"><span class="warning-mark">!</span><span class="closure-tooltip">Estación cerrada por obras de renovación.</span></span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Boedo</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Avenida La Plata</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>José María Moreno</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Emilio Mitre</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Medalla Milagrosa</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Varela</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Plaza de los Virreyes - Eva Perón</span><span class="combos"><span class="badge combo" data-line="P" style="--c:#ffb51b">P</span></span></li></ul></div>
+</article>
+<article class="line-card" data-line="P" style="--line:#ffb51b">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="P" style="--c:#ffb51b">P</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Int. Saguier</span><span class="combos"><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Balbastro</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Mariano Acosta</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Somellera</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Ana María Janer</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Nuestra Señora de Fátima</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Fernández de la Cruz</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Presidente Illia</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Parque de la Ciudad</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Cecilia Grierson</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Escalada</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pola</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Larrazábal</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Nicolás Descalzi</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Gabino Ezeiza</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Ana Díaz</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Centro Cívico Lugano</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>General Savio</span><span class="combos"></span></li></ul></div>
+</article></div>
+<div class="line-column"><article class="line-card" data-line="B" style="--line:#f21f32">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="B" style="--c:#f21f32">B</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Leandro N. Alem</span><span class="combos"><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Florida</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Carlos Pellegrini</span><span class="combos"><span class="badge combo" data-line="C" style="--c:#0a4bb2">C</span><span class="badge combo" data-line="D" style="--c:#078f76">D</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Uruguay</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Callao - Maestro Alfredo Bravo</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pasteur - AMIA</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pueyrredón</span><span class="combos"><span class="badge combo" data-line="H" style="--c:#ffd000">H</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Carlos Gardel</span><span class="combos"></span></li><li class="station-closed"><span aria-hidden="true" class="station-node"></span><span class="station-label">Medrano - Almagro</span><span aria-label="Estación cerrada por obras de renovación" class="closure-warning" role="img" tabindex="0"><span class="warning-mark">!</span><span class="closure-tooltip">Estación cerrada por obras de renovación.</span></span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Ángel Gallardo</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Malabia - Osvaldo Pugliese</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Dorrego</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Federico Lacroze</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Tronador - Villa Ortúzar</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>De los Incas - Parque Chas</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Echeverría</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Juan Manuel de Rosas - Villa Urquiza</span><span class="combos"></span></li></ul></div>
+</article>
+<article class="line-card" data-line="D" style="--line:#078f76">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="D" style="--c:#078f76">D</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Catedral</span><span class="combos"><span class="badge combo" data-line="A" style="--c:#06afd4">A</span><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>9 de Julio</span><span class="combos"><span class="badge combo" data-line="B" style="--c:#f21f32">B</span><span class="badge combo" data-line="C" style="--c:#0a4bb2">C</span></span></li><li class="station-closed"><span aria-hidden="true" class="station-node"></span><span class="station-label">Tribunales - Teatro Colón</span><span aria-label="Estación cerrada por obras de renovación" class="closure-warning" role="img" tabindex="0"><span class="warning-mark">!</span><span class="closure-tooltip">Estación cerrada por obras de renovación.</span></span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Callao</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Facultad de Medicina</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Pueyrredón</span><span class="combos"><span class="badge combo" data-line="H" style="--c:#ffd000">H</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Agüero</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Bulnes</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Scalabrini Ortiz</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Plaza Italia</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Palermo</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Ministro Carranza</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Olleros</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>José Hernández</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Juramento</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Congreso de Tucumán</span><span class="combos"></span></li></ul></div>
+</article>
+<article class="line-card" data-line="H" style="--line:#ffd000">
+<button aria-expanded="false" class="line-tab" type="button">
+<span class="line-title">Línea <span class="badge head-badge" data-line="H" style="--c:#ffd000">H</span></span>
+<span class="chev"></span>
+</button>
+<div class="panel"><div class="rail"></div><ul><li><span aria-hidden="true" class="station-node"></span><span>Facultad de Derecho - Julieta Lanteri</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Las Heras</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Santa Fe - Carlos Jáuregui</span><span class="combos"><span class="badge combo" data-line="D" style="--c:#078f76">D</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Córdoba</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Corrientes</span><span class="combos"><span class="badge combo" data-line="B" style="--c:#f21f32">B</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Once - 30 de Diciembre</span><span class="combos"><span class="badge combo" data-line="A" style="--c:#06afd4">A</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Venezuela</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Humberto 1°</span><span class="combos"><span class="badge combo" data-line="E" style="--c:#922b98">E</span></span></li><li><span aria-hidden="true" class="station-node"></span><span>Inclán - Mezquita Al Ahmad</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Caseros</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Parque Patricios</span><span class="combos"></span></li><li><span aria-hidden="true" class="station-node"></span><span>Hospitales</span><span class="combos"></span></li></ul></div>
+</article></div>
+</div>
+</section>
+<section class="map-section" id="mapas">
+<h2>ESTADO DE ESCALERAS Y ASCENSORES</h2>
+<div class="map-wrap"><div class="map-elevation-wrap"><img alt="Mapa completo de la red de Subte y Premetro" class="map-elevation-base" src="assets/mapa.png"/><button aria-label="Inclán, Línea H: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="Inclán" style="--x:64.65%;--y:70.48%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Inclán:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="Pueyrredón, Línea D: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="Pueyrredón" style="--x:64.95%;--y:19.56%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Pueyrredón:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="San Pedrito, Línea A: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="San Pedrito" style="--x:24.06%;--y:66.71%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>San Pedrito:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="Palermo, Línea D: La escalera N°2 no funciona." class="elevation-marker elevation-marker--off" data-station="Palermo" style="--x:40.47%;--y:15.5%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Palermo:</strong><span>La escalera N°2 no funciona.</span></span></button></div></div>
+</section>
+<span class="section-anchor" id="tarifas"></span>
+<span class="section-anchor" id="nosotros"></span>
+<div class="lower-wrap">
+<span class="lower-anchor lower-horarios" id="horarios"></span>
+<img alt="Tarifas y horarios" class="svgpart" src="lower_v29.webp?v=30"/>
+</div>
+<section aria-hidden="true" class="nosotros-targets">
+<span id="autoridades"></span><span id="historia"></span><span id="tienda"></span><span id="contacto"></span><span id="subtefan"></span>
+</section>
 <script>
-const STATIONS=[{"name": "9 de Julio", "lines": ["D"]}, {"name": "Acoyte", "lines": ["A"]}, {"name": "Agüero", "lines": ["D"]}, {"name": "Alberti", "lines": ["A"]}, {"name": "Avenida de Mayo", "lines": ["C"]}, {"name": "Avenida La Plata", "lines": ["E"]}, {"name": "Belgrano", "lines": ["E"]}, {"name": "Boedo", "lines": ["E"]}, {"name": "Bolívar", "lines": ["E"]}, {"name": "Bulnes", "lines": ["D"]}, {"name": "Callao", "lines": ["D"]}, {"name": "Callao - Maestro Alfredo Bravo", "lines": ["B"]}, {"name": "Carabobo", "lines": ["A"]}, {"name": "Carlos Gardel", "lines": ["B"]}, {"name": "Carlos Pellegrini", "lines": ["B"]}, {"name": "Caseros", "lines": ["H"]}, {"name": "Castro Barros", "lines": ["A"]}, {"name": "Catalinas", "lines": ["E"]}, {"name": "Catedral", "lines": ["D"]}, {"name": "Congreso - Raúl Alfonsín", "lines": ["A"]}, {"name": "Congreso de Tucumán", "lines": ["D"]}, {"name": "Constitución", "lines": ["C"]}, {"name": "Correo Central", "lines": ["E"]}, {"name": "Corrientes", "lines": ["H"]}, {"name": "Córdoba", "lines": ["H"]}, {"name": "De los Incas - Parque Chas", "lines": ["B"]}, {"name": "Diagonal Norte", "lines": ["C"]}, {"name": "Dorrego", "lines": ["B"]}, {"name": "Echeverría", "lines": ["B"]}, {"name": "Emilio Mitre", "lines": ["E"]}, {"name": "Entre Ríos - Rodolfo Walsh", "lines": ["E"]}, {"name": "Facultad de Derecho - Julieta Lanteri", "lines": ["H"]}, {"name": "Facultad de Medicina", "lines": ["D"]}, {"name": "Federico Lacroze", "lines": ["B"]}, {"name": "Florida", "lines": ["B"]}, {"name": "General San Martín", "lines": ["C"]}, {"name": "General Urquiza", "lines": ["E"]}, {"name": "Hospitales", "lines": ["H"]}, {"name": "Humberto 1°", "lines": ["H"]}, {"name": "Inclán - Mezquita Al Ahmad", "lines": ["H"]}, {"name": "Independencia", "lines": ["C", "E"]}, {"name": "José Hernández", "lines": ["D"]}, {"name": "José María Moreno", "lines": ["E"]}, {"name": "Juan Manuel de Rosas - Villa Urquiza", "lines": ["B"]}, {"name": "Jujuy", "lines": ["E"]}, {"name": "Juramento", "lines": ["D"]}, {"name": "Las Heras", "lines": ["H"]}, {"name": "Lavalle", "lines": ["C"]}, {"name": "Leandro N. Alem", "lines": ["B"]}, {"name": "Lima", "lines": ["A"]}, {"name": "Loria", "lines": ["A"]}, {"name": "Malabia - Osvaldo Pugliese", "lines": ["B"]}, {"name": "Medalla Milagrosa", "lines": ["E"]}, {"name": "Medrano - Almagro", "lines": ["B"]}, {"name": "Ministro Carranza", "lines": ["D"]}, {"name": "Moreno", "lines": ["C"]}, {"name": "Olleros", "lines": ["D"]}, {"name": "Once - 30 de Diciembre", "lines": ["H"]}, {"name": "Palermo", "lines": ["D"]}, {"name": "Parque Patricios", "lines": ["H"]}, {"name": "Pasco", "lines": ["A"]}, {"name": "Pasteur - AMIA", "lines": ["B"]}, {"name": "Perú", "lines": ["A"]}, {"name": "Pichincha", "lines": ["E"]}, {"name": "Piedras", "lines": ["A"]}, {"name": "Plaza de los Virreyes - Eva Perón", "lines": ["E"]}, {"name": "Plaza de Mayo - Casa Rosada", "lines": ["A"]}, {"name": "Plaza Italia", "lines": ["D"]}, {"name": "Plaza Miserere", "lines": ["A"]}, {"name": "Primera Junta", "lines": ["A"]}, {"name": "Puan", "lines": ["A"]}, {"name": "Pueyrredón", "lines": ["B", "D"]}, {"name": "Retiro", "lines": ["C", "E"]}, {"name": "Río de Janeiro", "lines": ["A"]}, {"name": "San José", "lines": ["E"]}, {"name": "San José de Flores", "lines": ["A"]}, {"name": "San Juan", "lines": ["C"]}, {"name": "San Pedrito", "lines": ["A"]}, {"name": "Santa Fe - Carlos Jáuregui", "lines": ["H"]}, {"name": "Scalabrini Ortiz", "lines": ["D"]}, {"name": "Sáenz Peña", "lines": ["A"]}, {"name": "Tribunales - Teatro Colón", "lines": ["D"]}, {"name": "Tronador - Villa Ortúzar", "lines": ["B"]}, {"name": "Uruguay", "lines": ["B"]}, {"name": "Varela", "lines": ["E"]}, {"name": "Venezuela", "lines": ["H"]}, {"name": "Ángel Gallardo", "lines": ["B"]}];
+const STATIONS=[{"name":"Plaza de Mayo - Casa Rosada","lines":["A"]},{"name":"Perú","lines":["A"]},{"name":"Piedras","lines":["A"]},{"name":"Lima","lines":["A"]},{"name":"Sáenz Peña","lines":["A"]},{"name":"Congreso - Raúl Alfonsín","lines":["A"]},{"name":"Pasco","lines":["A"]},{"name":"Alberti","lines":["A"]},{"name":"Plaza Miserere","lines":["A"]},{"name":"Loria","lines":["A"]},{"name":"Castro Barros","lines":["A"]},{"name":"Río de Janeiro","lines":["A"]},{"name":"Acoyte","lines":["A"]},{"name":"Primera Junta","lines":["A"]},{"name":"Puan","lines":["A"]},{"name":"Carabobo","lines":["A"]},{"name":"San José de Flores","lines":["A"]},{"name":"San Pedrito","lines":["A"]},{"name":"Leandro N. Alem","lines":["B"]},{"name":"Florida","lines":["B"]},{"name":"Carlos Pellegrini","lines":["B"]},{"name":"Uruguay","lines":["B"]},{"name":"Callao - Maestro Alfredo Bravo","lines":["B"]},{"name":"Pasteur - AMIA","lines":["B"]},{"name":"Pueyrredón","lines":["B","D"]},{"name":"Carlos Gardel","lines":["B"]},{"name":"Medrano - Almagro","lines":["B"]},{"name":"Ángel Gallardo","lines":["B"]},{"name":"Malabia - Osvaldo Pugliese","lines":["B"]},{"name":"Dorrego","lines":["B"]},{"name":"Federico Lacroze","lines":["B"]},{"name":"Tronador - Villa Ortúzar","lines":["B"]},{"name":"De los Incas - Parque Chas","lines":["B"]},{"name":"Echeverría","lines":["B"]},{"name":"Juan Manuel de Rosas - Villa Urquiza","lines":["B"]},{"name":"Retiro","lines":["C","E"]},{"name":"General San Martín","lines":["C"]},{"name":"Lavalle","lines":["C"]},{"name":"Diagonal Norte","lines":["C"]},{"name":"Avenida de Mayo","lines":["C"]},{"name":"Moreno","lines":["C"]},{"name":"Independencia","lines":["C","E"]},{"name":"San Juan","lines":["C"]},{"name":"Constitución","lines":["C"]},{"name":"Catedral","lines":["D"]},{"name":"9 de Julio","lines":["D"]},{"name":"Tribunales - Teatro Colón","lines":["D"]},{"name":"Callao","lines":["D"]},{"name":"Facultad de Medicina","lines":["D"]},{"name":"Agüero","lines":["D"]},{"name":"Bulnes","lines":["D"]},{"name":"Scalabrini Ortiz","lines":["D"]},{"name":"Plaza Italia","lines":["D"]},{"name":"Palermo","lines":["D"]},{"name":"Ministro Carranza","lines":["D"]},{"name":"Olleros","lines":["D"]},{"name":"José Hernández","lines":["D"]},{"name":"Juramento","lines":["D"]},{"name":"Congreso de Tucumán","lines":["D"]},{"name":"Catalinas","lines":["E"]},{"name":"Correo Central","lines":["E"]},{"name":"Bolívar","lines":["E"]},{"name":"Belgrano","lines":["E"]},{"name":"San José","lines":["E"]},{"name":"Entre Ríos - Rodolfo Walsh","lines":["E"]},{"name":"Pichincha","lines":["E"]},{"name":"Jujuy","lines":["E"]},{"name":"General Urquiza","lines":["E"]},{"name":"Boedo","lines":["E"]},{"name":"Avenida La Plata","lines":["E"]},{"name":"José María Moreno","lines":["E"]},{"name":"Emilio Mitre","lines":["E"]},{"name":"Medalla Milagrosa","lines":["E"]},{"name":"Varela","lines":["E"]},{"name":"Plaza de los Virreyes - Eva Perón","lines":["E"]},{"name":"Facultad de Derecho - Julieta Lanteri","lines":["H"]},{"name":"Las Heras","lines":["H"]},{"name":"Santa Fe - Carlos Jáuregui","lines":["H"]},{"name":"Córdoba","lines":["H"]},{"name":"Corrientes","lines":["H"]},{"name":"Once - 30 de Diciembre","lines":["H"]},{"name":"Venezuela","lines":["H"]},{"name":"Humberto 1°","lines":["H"]},{"name":"Inclán - Mezquita Al Ahmad","lines":["H"]},{"name":"Caseros","lines":["H"]},{"name":"Parque Patricios","lines":["H"]},{"name":"Hospitales","lines":["H"]},{"name":"Int. Saguier","lines":["P"]},{"name":"Balbastro","lines":["P"]},{"name":"Mariano Acosta","lines":["P"]},{"name":"Somellera","lines":["P"]},{"name":"Ana María Janer","lines":["P"]},{"name":"Nuestra Señora de Fátima","lines":["P"]},{"name":"Fernández de la Cruz","lines":["P"]},{"name":"Presidente Illia","lines":["P"]},{"name":"Parque de la Ciudad","lines":["P"]},{"name":"Cecilia Grierson","lines":["P"]},{"name":"Escalada","lines":["P"]},{"name":"Pola","lines":["P"]},{"name":"Larrazábal","lines":["P"]},{"name":"Nicolás Descalzi","lines":["P"]},{"name":"Gabino Ezeiza","lines":["P"]},{"name":"Ana Díaz","lines":["P"]},{"name":"Centro Cívico Lugano","lines":["P"]},{"name":"General Savio","lines":["P"]}];
 const COLORS={"A": "#06afd4", "B": "#f21f32", "C": "#0a4bb2", "D": "#078f76", "E": "#922b98", "H": "#ffd000", "P": "#ffb51b"};
 
 document.querySelectorAll('.line-tab').forEach(btn=>btn.addEventListener('click',()=>{

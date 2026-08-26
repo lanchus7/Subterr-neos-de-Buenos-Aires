@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>SubVenirs — Subte Buenos Aires</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      width:100%;
+      min-height:100%;
+      background:#fff;
+    }
+    body{
+      overflow-x:hidden;
+    }
+    .subvenirs-page{
+      position:relative;
+      width:100%;
+      background:#fff;
+    }
+    .subvenirs-artwork{
+      display:block;
+      width:100%;
+      height:auto;
+      margin:0;
+      padding:0;
+    }
+
+    /* Invisible home hotspot over the centered Subte logo in the supplied SVG.
+       It gives the secondary page a simple way back to the main site without
+       visually changing the design. */
+    .home-hotspot{
+      position:absolute;
+      top:5.1%;
+      left:46.2%;
+      width:7.6%;
+      height:7.0%;
+      z-index:10;
+      display:block;
+      background:transparent;
+    }
+    .home-hotspot:focus-visible{
+      outline:2px solid #ffd400;
+      outline-offset:2px;
+    }
+  </style>
+</head>
+<body>
+  <main class="subvenirs-page">
+    <img class="subvenirs-artwork" src="subvenirs.svg" alt="SubVenirs">
+    <a class="home-hotspot" href="index.html" aria-label="Volver al inicio"></a>
+  </main>
+</body>
+</html>

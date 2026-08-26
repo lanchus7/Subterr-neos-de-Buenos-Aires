@@ -887,47 +887,1054 @@ body,
   background:#111 !important;
 }
 
-/* === V31: COMPLETE SUBTE LOGO ALWAYS ABOVE THE MENU === */
-.logo-v31{
+/* ============================================================
+   V31 — DESPLEGABLES DE ESTACIONES
+   Ajustado contra la referencia visual suministrada.
+   ============================================================ */
+
+/* Typography */
+.line-tab,
+.panel li {
+  font-family:"Archivo", "ArchivoWeb", Arial, sans-serif !important;
+}
+
+.line-tab{
+  font-weight:600 !important;
+  letter-spacing:-0.03em !important;
+}
+
+.panel li{
+  font-size:clamp(15px,1.08vw,18px) !important;
+  line-height:1.18 !important;
+  font-weight:600 !important;
+  letter-spacing:-0.02em !important;
+  min-height:32px !important;
+}
+
+/* More faithful proportions of the station schematic */
+.panel{
+  padding:28px 28px 34px 114px !important;
+}
+
+.rail{
+  left:96px !important;
+  top:31px !important;
+  bottom:34px !important;
+  width:6px !important;
+  border-radius:4px !important;
+}
+
+/* Hollow station circles sitting exactly on the colored rail */
+.panel li::before{
+  left:-22px !important;
+  width:7px !important;
+  height:7px !important;
+  background:#fff !important;
+  border:2px solid var(--line) !important;
+  box-sizing:border-box !important;
+}
+
+/* Combination badges */
+.combos{
+  gap:4px !important;
+  margin-left:5px !important;
+}
+
+.combo{
+  width:19px !important;
+  height:19px !important;
+  border:2px solid #fff !important;
+  font-family:"Archivo", Arial, sans-serif !important;
+  font-size:9px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+}
+
+/* Line H: black station text, as requested */
+.line-card[data-line="H"] .panel li{
+  color:#111 !important;
+}
+
+/* Closed stations */
+.panel li.station-closed{
+  color:#666 !important;
+}
+
+.panel li.station-closed .station-label{
+  color:#666 !important;
+}
+
+/* Warning pictogram: yellow triangle + black outline, matching the reference */
+.closure-warning{
+  position:relative;
+  display:inline-flex;
+  width:22px;
+  height:20px;
+  margin-left:2px;
+  align-items:center;
+  justify-content:center;
+  cursor:help;
+  outline:none;
+  flex:0 0 auto;
+}
+
+.closure-warning::before{
+  content:"";
   position:absolute;
-  z-index:500 !important;
-  left:50%;
-  top:58%;
-  width:8.15%;
-  aspect-ratio:1 / 1;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  overflow:hidden;
+  left:1px;
+  top:1px;
+  width:0;
+  height:0;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-bottom:18px solid #111;
+}
+
+.closure-warning::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:4px;
+  width:0;
+  height:0;
+  border-left:7px solid transparent;
+  border-right:7px solid transparent;
+  border-bottom:13px solid #ffd400;
+}
+
+.warning-mark{
+  position:relative;
+  z-index:2;
+  margin-top:6px;
+  color:#111;
+  font:700 11px/1 Arial, sans-serif;
+}
+
+/* Tooltip */
+.closure-tooltip{
+  position:absolute;
+  left:26px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:500;
+  width:max-content;
+  max-width:220px;
+  padding:7px 9px;
+  border:1px solid #bdbdbd;
+  background:#fff;
+  color:#111;
+  font:500 11px/1.2 "Archivo", Arial, sans-serif;
+  box-shadow:0 2px 8px rgba(0,0,0,.16);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .12s ease;
+}
+
+.closure-warning:hover .closure-tooltip,
+.closure-warning:focus .closure-tooltip{
+  opacity:1;
+  visibility:visible;
+}
+
+/* Keep the warning on the same row even on narrow screens */
+.station-closed{
+  flex-wrap:nowrap !important;
+}
+
+@media(max-width:850px){
+  .panel{
+    padding-left:86px !important;
+  }
+  .rail{
+    left:68px !important;
+  }
+  .panel li{
+    font-size:14px !important;
+  }
+  .closure-tooltip{
+    left:auto;
+    right:24px;
+  }
+}
+
+/* ============================================================
+   V34 — ESTACIONES CALIBRADAS CONTRA EL AI / PDF ORIGINAL
+   Fuente detectada en AI: UniversLTStd-Bold.
+   Escala tomada del PDF original (1920 pt de ancho):
+   textos de estaciones ≈ 39 pt de caja -> ~24–30 px según viewport.
+   ============================================================ */
+
+.panel{
+  position:relative !important;
+  padding:30px 28px 38px 126px !important;
+  overflow:visible !important;
+}
+
+/* línea del recorrido */
+.rail{
+  position:absolute !important;
+  left:102px !important;
+  top:31px !important;
+  bottom:36px !important;
+  width:7px !important;
+  border-radius:4px !important;
+  background:var(--line) !important;
+}
+
+/* nombres de estaciones: Univers del archivo original */
+.panel li{
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  min-height:40px !important;
+  padding:0 !important;
+  color:var(--line) !important;
+
+  font-family:"Univers LT Std","UniversLTStd-Bold",
+              "Univers LT Std 65 Bold","Helvetica Neue",
+              Arial,sans-serif !important;
+  font-size:clamp(18px,1.48vw,25px) !important;
+  font-weight:700 !important;
+  line-height:1.08 !important;
+  letter-spacing:-0.025em !important;
+}
+
+/* circulitos huecos centrados exactamente en la línea */
+.panel li::before{
+  content:"" !important;
+  position:absolute !important;
+  left:-28px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:10px !important;
+  height:10px !important;
+  box-sizing:border-box !important;
+  border:2px solid var(--line) !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  z-index:3 !important;
+}
+
+/* Las bochitas de combinación van SIEMPRE a la IZQUIERDA del recorrido */
+.combos{
+  position:absolute !important;
+  right:calc(100% + 54px) !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:5px !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+}
+
+.combo{
+  width:22px !important;
+  height:22px !important;
+  border:2px solid #fff !important;
+  border-radius:50% !important;
+  box-shadow:0 0 0 1px rgba(0,0,0,.08) !important;
+  font-family:Arial,sans-serif !important;
+  font-size:11px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+}
+
+/* Estaciones cerradas: mismo layout, sólo gris + warning existente */
+.panel li.station-closed,
+.panel li.station-closed .station-label{
+  color:#666 !important;
+}
+
+/* Línea H: texto negro, recorrido amarillo */
+.line-card[data-line="H"] .panel li{
+  color:#111 !important;
+}
+.line-card[data-line="H"] .panel li::before{
+  border-color:var(--line) !important;
+}
+
+/* Conexiones ferroviarias visibles en el AI:
+   se ubican más a la izquierda que las bochitas de Subte. */
+.railway-connection{
+  position:absolute !important;
+  right:calc(100% + 82px) !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  color:#5e5e5e !important;
+  white-space:nowrap !important;
   pointer-events:none;
 }
-.logo-v31 img{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  background:transparent !important;
+
+.railway-copy{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-end !important;
+  line-height:.98 !important;
+  text-align:right !important;
+}
+.railway-copy small{
+  font:400 8px/1.05 Arial,sans-serif !important;
+}
+.railway-copy b{
+  font:700 9px/1.05 Arial,sans-serif !important;
 }
 
-/* Nothing in the rebuilt menu may cover the centered logo. */
-.real-nav,
-.nav-logo-space{
-  background:transparent !important;
+/* pictograma ferroviario pequeño, neutro, como el del original */
+.train-icon{
+  position:relative !important;
+  display:inline-block !important;
+  width:14px !important;
+  height:17px !important;
+  border:2px solid #666 !important;
+  border-radius:2px 2px 3px 3px !important;
 }
-
-/* Hide the old static Illustrator dropdown that is baked into header_v29.webp. */
-.exact-header .nosotros-cleanup{
-  display:block !important;
+.train-window{
   position:absolute !important;
-  z-index:490 !important;
-  left:71.0% !important;
-  top:64% !important;
-  width:13.5% !important;
-  height:36% !important;
+  left:2px !important;
+  right:2px !important;
+  top:2px !important;
+  height:6px !important;
+  border:1px solid #666 !important;
+}
+.train-wheel{
+  position:absolute !important;
+  bottom:-4px !important;
+  width:4px !important;
+  height:4px !important;
+  border-radius:50% !important;
+  background:#666 !important;
+}
+.train-wheel.w1{left:1px !important}
+.train-wheel.w2{right:1px !important}
+
+/* Solapas: Frutiger, que también aparece en el AI */
+.line-tab{
+  font-family:"Frutiger","Frutiger LT Std","Frutiger-Roman",
+              "Helvetica Neue",Arial,sans-serif !important;
+  font-weight:700 !important;
+}
+
+/* No permitir que los elementos absolutos provoquen ancho extra en toda la página */
+.line-card{
+  overflow:visible !important;
+}
+.stations{
+  overflow-x:hidden !important;
+}
+
+@media(max-width:1000px){
+  .panel{
+    padding-left:108px !important;
+  }
+  .rail{
+    left:88px !important;
+  }
+  .panel li{
+    min-height:34px !important;
+    font-size:17px !important;
+  }
+  .panel li::before{
+    left:-25px !important;
+    width:9px !important;
+    height:9px !important;
+  }
+  .combos{
+    right:calc(100% + 43px) !important;
+  }
+  .combo{
+    width:19px !important;
+    height:19px !important;
+    font-size:9px !important;
+  }
+  .railway-connection{
+    right:calc(100% + 68px) !important;
+  }
+}
+
+/* ============================================================
+   V35 — ESTACIONES: ARCHIVO BOLD + TODO DENTRO DEL RECUADRO
+   ============================================================ */
+
+/* Nombres de estaciones: Archivo Bold */
+.panel li{
+  font-family:"Archivo", "ArchivoWeb", Arial, sans-serif !important;
+  font-weight:700 !important;
+}
+
+/* Reorganizamos el interior para que combinaciones y ferrocarriles
+   no se salgan del panel. */
+.panel{
+  position:relative !important;
+  padding:30px 28px 38px 152px !important;
+  overflow:hidden !important;
+}
+
+/* Línea algo más hacia la derecha para dejar una columna real
+   para combinaciones y ferrocarriles. */
+.rail{
+  left:128px !important;
+}
+
+/* Nodo de estación centrado sobre la línea */
+.panel li::before{
+  left:-28px !important;
+}
+
+/* Combinaciones de Subte: a la izquierda de la línea,
+   pero SIEMPRE dentro del panel */
+.combos{
+  position:absolute !important;
+  right:calc(100% + 36px) !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:5px !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+}
+
+/* Conexiones ferroviarias: columna más a la izquierda,
+   contenida dentro del panel */
+.railway-connection{
+  position:absolute !important;
+  right:calc(100% + 70px) !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:5px !important;
+  white-space:nowrap !important;
+  color:#5e5e5e !important;
+}
+
+/* Evitar cualquier overflow horizontal de los desplegables */
+.line-card,
+.panel,
+.panel ul{
+  overflow:hidden !important;
+  max-width:100% !important;
+}
+
+/* Mantener tooltip visible aunque el panel recorte otros elementos:
+   lo sacamos hacia la derecha, dentro del ancho disponible */
+.closure-tooltip{
+  left:28px !important;
+  right:auto !important;
+}
+
+/* Responsive */
+@media(max-width:1000px){
+  .panel{
+    padding-left:132px !important;
+  }
+  .rail{
+    left:108px !important;
+  }
+  .combos{
+    right:calc(100% + 31px) !important;
+  }
+  .railway-connection{
+    right:calc(100% + 58px) !important;
+  }
+}
+
+/* ============================================================
+   V36 — NODOS + COMBINACIONES FIELES Y ROBUSTAS
+   ============================================================ */
+
+/* Keep all diagram elements INSIDE the station card. */
+.panel{
+  position:relative !important;
+  padding:28px 28px 36px 136px !important;
+  overflow:hidden !important;
+}
+
+/* Main colored route line */
+.rail{
+  position:absolute !important;
+  left:104px !important;
+  top:29px !important;
+  bottom:34px !important;
+  width:6px !important;
+  border-radius:3px !important;
+  background:var(--line) !important;
+}
+
+/* Station row */
+.panel li{
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  min-height:40px !important;
+  padding:0 !important;
+  overflow:visible !important;
+
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:clamp(18px,1.45vw,24px) !important;
+  font-weight:700 !important;
+  line-height:1.05 !important;
+  letter-spacing:-0.025em !important;
+  color:var(--line) !important;
+}
+
+/* Disable legacy pseudo-node; V36 uses a real DOM node. */
+.panel li::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* Exact hollow circles on the route line */
+.station-node{
+  position:absolute !important;
+  left:-35px !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:9px !important;
+  height:9px !important;
+  box-sizing:border-box !important;
+  border:2px solid var(--line) !important;
+  border-radius:50% !important;
   background:#fff !important;
+  z-index:5 !important;
   pointer-events:none !important;
 }
 
-/* The live menu text stays above the cleanup patch, but below the logo. */
-.real-nav{
-  z-index:495 !important;
+/* Interchange bubbles — LEFT of the line, centered with the station row */
+.combos{
+  position:absolute !important;
+  left:-104px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:58px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:4px !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  z-index:6 !important;
+}
+
+.combo{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:20px !important;
+  height:20px !important;
+  min-width:20px !important;
+  min-height:20px !important;
+  border:2px solid #fff !important;
+  border-radius:50% !important;
+  box-shadow:0 0 0 1px rgba(0,0,0,.10) !important;
+  font-family:"Archivo",Arial,sans-serif !important;
+  font-size:10px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  color:#fff !important;
+}
+.combo[style*="#ffd000"]{color:#111 !important}
+
+/* Railway interchange labels sit farther left, but still inside the card */
+.railway-connection{
+  position:absolute !important;
+  left:-130px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  width:82px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:4px !important;
+  color:#666 !important;
+  white-space:nowrap !important;
+  z-index:4 !important;
+}
+
+/* Closed station state retained */
+.panel li.station-closed,
+.panel li.station-closed .station-label{
+  color:#666 !important;
+}
+
+/* H: black names, yellow route/node */
+.line-card[data-line="H"] .panel li{
+  color:#111 !important;
+}
+.line-card[data-line="H"] .station-node{
+  border-color:var(--line) !important;
+}
+
+/* Prevent any page-wide overflow while keeping all symbols visible */
+.stations,
+.grid,
+.line-column,
+.line-card,
+.panel{
+  max-width:100% !important;
+}
+.stations{
+  overflow-x:hidden !important;
+}
+
+/* Responsive calibration */
+@media(max-width:1000px){
+  .panel{
+    padding-left:122px !important;
+  }
+  .rail{
+    left:94px !important;
+  }
+  .panel li{
+    min-height:34px !important;
+    font-size:16px !important;
+  }
+  .station-node{
+    left:-28px !important;
+    width:8px !important;
+    height:8px !important;
+  }
+  .combos{
+    left:-91px !important;
+    width:54px !important;
+  }
+  .combo{
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    min-height:18px !important;
+    font-size:9px !important;
+  }
+  .railway-connection{
+    left:-116px !important;
+    width:76px !important;
+  }
+}
+
+/* ============================================================
+   V37 — FIX REAL: nodos y combinaciones visibles
+   El problema era un overflow:hidden heredado en .panel ul,
+   que recortaba todo lo colocado a la izquierda del texto.
+   ============================================================ */
+
+/* El UL no debe recortar los elementos del esquema. */
+.panel ul{
+  overflow:visible !important;
+  max-width:none !important;
+}
+
+/* El panel sí puede contener todo el esquema dentro del recuadro. */
+.panel{
+  overflow:hidden !important;
+}
+
+/* Línea */
+.rail{
+  left:104px !important;
+  width:6px !important;
+}
+
+/* Cada fila comienza a x=136px; el centro de la línea está en x=107px.
+   Por eso el nodo debe tener su CENTRO exactamente 29px a la izquierda. */
+.station-node{
+  left:-29px !important;
+  top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  width:9px !important;
+  height:9px !important;
+  border:2px solid var(--line) !important;
+  border-radius:50% !important;
+  background:#fff !important;
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  z-index:10 !important;
+}
+
+/* Bochitas de combinación: a la izquierda de la línea,
+   dentro del panel y alineadas verticalmente con la estación. */
+.combos{
+  left:-101px !important;
+  width:58px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
+  display:flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:4px !important;
+  z-index:12 !important;
+}
+
+.combo{
+  display:inline-flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  width:18px !important;
+  height:18px !important;
+  min-width:18px !important;
+  min-height:18px !important;
+  border:2px solid #fff !important;
+  border-radius:50% !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-family:"Archivo",Arial,sans-serif !important;
+  font-size:9px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+}
+
+/* Conexiones ferroviarias: también a la izquierda y sin ser recortadas por el UL. */
+.railway-connection{
+  left:-129px !important;
+  width:82px !important;
+  display:flex !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+/* Mantener nombres en Archivo Bold. */
+.panel li{
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-weight:700 !important;
+}
+
+/* H: texto negro; nodo amarillo. */
+.line-card[data-line="H"] .panel li{
+  color:#111 !important;
+}
+.line-card[data-line="H"] .station-node{
+  border-color:var(--line) !important;
+}
+
+@media(max-width:1000px){
+  .station-node{
+    left:-28px !important;
+  }
+  .combos{
+    left:-89px !important;
+    width:52px !important;
+  }
+  .railway-connection{
+    left:-114px !important;
+    width:74px !important;
+  }
+}
+
+/* ============================================================
+   V40 — SOLAPAS DE LÍNEA
+   Ajuste visual contra la referencia del AI/SVG:
+   - "Línea" en Archivo Bold.
+   - Bochita más fiel: círculo más fino, letra centrada y misma familia.
+   ============================================================ */
+
+.line-tab{
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-weight:700 !important;
+  letter-spacing:-0.025em !important;
+}
+
+/* Mantener "Línea" + bochita como un solo grupo, alineado verticalmente */
+.line-title{
+  display:flex !important;
+  align-items:center !important;
+  gap:13px !important;
+}
+
+/* Bochita del encabezado de cada línea */
+.head-badge{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:50px !important;
+  height:50px !important;
+  min-width:50px !important;
+  min-height:50px !important;
+
+  padding:0 !important;
+  margin:0 !important;
+
+  border:2px solid currentColor !important;
+  border-radius:50% !important;
+  background:transparent !important;
+
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:25px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  letter-spacing:0 !important;
+
+  color:#fff !important;
+  box-sizing:border-box !important;
+  vertical-align:middle !important;
+}
+
+/* Línea H: exactamente el mismo tratamiento pero negro */
+.line-card[data-line="H"] .head-badge{
+  color:#111 !important;
+  border-color:#111 !important;
+}
+
+/* Mantener las demás líneas en blanco */
+.line-card:not([data-line="H"]) .head-badge{
+  color:#fff !important;
+  border-color:#fff !important;
+}
+
+/* Ajuste fino del texto de la solapa */
+.line-tab{
+  font-size:clamp(34px,3vw,48px) !important;
+  line-height:1 !important;
+}
+
+/* En pantallas medianas/chicas, conservar proporción */
+@media(max-width:1000px){
+  .head-badge{
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    min-height:44px !important;
+    font-size:22px !important;
+  }
+  .line-title{
+    gap:11px !important;
+  }
+}
+
+/* ============================================================
+   V43 — ESTADO DE MEDIOS DE ELEVACIÓN SOBRE MAPA
+   Marcadores HTML superpuestos al mapa base.
+   ============================================================ */
+.map-elevation-wrap{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+}
+.map-elevation-base{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+}
+.elevation-marker{
+  --marker:#00e83a;
+  position:absolute !important;
+  left:var(--x) !important;
+  top:var(--y) !important;
+  transform:translate(-50%,-50%) !important;
+  width:25px !important;
+  height:25px !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  cursor:pointer !important;
+  z-index:20 !important;
+  overflow:visible !important;
+}
+.elevation-marker--off{ --marker:#8d8d8d; }
+.elevation-dot{
+  display:block !important;
+  width:25px !important;
+  height:25px !important;
+  border-radius:50% !important;
+  background:var(--marker) !important;
+  border:3px solid var(--marker) !important;
+  box-sizing:border-box !important;
+}
+.elevation-tooltip{
+  position:absolute !important;
+  left:18px !important;
+  top:15px !important;
+  width:300px !important;
+  padding:20px 24px 22px !important;
+  background:#444 !important;
+  color:#fff !important;
+  text-align:left !important;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:21px !important;
+  line-height:1.18 !important;
+  font-weight:400 !important;
+  box-sizing:border-box !important;
+  border-radius:2px !important;
+  box-shadow:0 2px 4px rgba(0,0,0,.15) !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  transition:opacity .12s ease !important;
+  z-index:50 !important;
+}
+.elevation-tooltip strong{
+  display:block !important;
+  margin-bottom:20px !important;
+  font-style:italic !important;
+  font-weight:700 !important;
+  font-size:22px !important;
+}
+.elevation-tooltip span{
+  display:block !important;
+}
+.elevation-marker:hover .elevation-tooltip,
+.elevation-marker:focus .elevation-tooltip{
+  opacity:1 !important;
+  visibility:visible !important;
+}
+@media(max-width:900px){
+  .elevation-marker,
+  .elevation-dot{
+    width:18px !important;
+    height:18px !important;
+  }
+  .elevation-tooltip{
+    width:230px !important;
+    font-size:15px !important;
+    padding:14px 16px 16px !important;
+  }
+  .elevation-tooltip strong{
+    font-size:16px !important;
+    margin-bottom:12px !important;
+  }
+}
+
+/* V45 — eliminar desplegable residual debajo de NOSOTROS */
+.nosotros-dropdown,
+#nosotros-dropdown,
+.nosotros-submenu,
+#nosotros-submenu{
+  display:none !important;
+  visibility:hidden !important;
+}
+
+/* ============================================================
+   V46 — quitar residuo gráfico bajo NOSOTROS
+   El residuo forma parte del arte/imagen estática del header.
+   Se cubre exclusivamente esa franja, sin alterar el menú.
+   ============================================================ */
+.menu-main,
+.main-menu,
+.nav-main,
+header nav{
+  position:relative !important;
+  z-index:30 !important;
+}
+
+/* mantener el contenido posterior por encima/debajo según su flujo */
+
+.nosotros-artwork-mask{
+  position:absolute !important;
+  top:145px !important;
+  left:calc(75% - 25px) !important;
+  width:205px !important;
+  height:115px !important;
+  background:#fff !important;
+  z-index:25 !important;
+  pointer-events:none !important;
+}
+
+/* V47 — dropdown baked into header image removed at source */
+.nosotros-artwork-mask,
+.nosotros-cleanup{
+  display:none !important;
+}
+
+/* ============================================================
+   V49 — MOTIVO DEL ESTADO DE SERVICIO
+   Sólo se muestran explicaciones en líneas con demora/interrupción.
+   ============================================================ */
+.service-reason-wrap{
+  position:relative !important;
+  display:block !important;
+  width:100% !important;
+}
+
+.service-reason-base{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+}
+
+.service-reason-hit{
+  position:absolute !important;
+  left:var(--x) !important;
+  top:var(--y) !important;
+  transform:translate(-50%,-50%) !important;
+  width:5.2% !important;
+  height:8.8% !important;
+  padding:0 !important;
+  margin:0 !important;
+  border:0 !important;
+  background:transparent !important;
+  cursor:help !important;
+  overflow:visible !important;
+  z-index:25 !important;
+}
+
+.service-reason-tooltip{
+  position:absolute !important;
+  left:50% !important;
+  top:calc(100% + 7px) !important;
+  transform:translateX(-50%) !important;
+  min-width:190px !important;
+  padding:10px 13px 11px !important;
+  background:#444 !important;
+  color:#fff !important;
+  border-radius:2px !important;
+  box-shadow:0 2px 7px rgba(0,0,0,.20) !important;
+  text-align:left !important;
+
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:13px !important;
+  line-height:1.2 !important;
+  font-weight:500 !important;
+
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  transition:opacity .12s ease !important;
+  z-index:100 !important;
+}
+
+.service-reason-tooltip strong{
+  display:block !important;
+  margin-bottom:4px !important;
+  font-weight:700 !important;
+}
+
+.service-reason-tooltip span{
+  display:block !important;
+}
+
+.service-reason-hit:hover .service-reason-tooltip,
+.service-reason-hit:focus .service-reason-tooltip{
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.service-reason-hit--delay .service-reason-tooltip{
+  border-top:3px solid #f2a21b !important;
+}
+
+.service-reason-hit--interrupted .service-reason-tooltip{
+  border-top:3px solid #e83a2f !important;
+}
+
+@media(max-width:900px){
+  .service-reason-hit{
+    width:7% !important;
+    height:10% !important;
+  }
+  .service-reason-tooltip{
+    min-width:150px !important;
+    font-size:11px !important;
+    padding:8px 10px 9px !important;
+  }
 }
