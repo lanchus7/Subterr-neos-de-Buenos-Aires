@@ -2717,3 +2717,203 @@ img,svg{max-width:100%;height:auto}
     min-height:16px !important;
   }
 }
+
+/* ============================================================
+   V60 — MOBILE: DESPLEGABLES REHECHOS CON GRID
+   En lugar de posicionar nodos/bochitas con offsets negativos,
+   cada fila tiene columnas fijas:
+   [combinaciones] [nodo/línea] [nombre]
+   Así no pueden correrse entre sí en Safari/iPhone.
+   ============================================================ */
+
+@media (max-width:900px){
+
+  .panel{
+    padding:24px 14px 30px 14px !important;
+    overflow:hidden !important;
+  }
+
+  /* La línea vertical se dibuja respecto del mismo grid que los nodos */
+  .panel .rail{
+    display:none !important;
+  }
+
+  .panel ul{
+    position:relative !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:visible !important;
+    list-style:none !important;
+  }
+
+  .panel ul::before{
+    content:"" !important;
+    position:absolute !important;
+    left:79px !important; /* 68px + mitad de columna de nodo (22/2) */
+    top:4px !important;
+    bottom:4px !important;
+    width:6px !important;
+    transform:translateX(-50%) !important;
+    border-radius:3px !important;
+    background:var(--line) !important;
+    z-index:1 !important;
+  }
+
+  .panel li{
+    position:relative !important;
+    display:grid !important;
+    grid-template-columns:68px 22px minmax(0,1fr) !important;
+    column-gap:0 !important;
+    align-items:center !important;
+
+    width:100% !important;
+    min-height:38px !important;
+    padding:0 !important;
+    margin:0 !important;
+
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:16px !important;
+    line-height:1.08 !important;
+    font-weight:700 !important;
+    letter-spacing:-0.02em !important;
+  }
+
+  /* Nodo de cada estación: columna central, centrado sobre la línea */
+  .station-node{
+    position:relative !important;
+    left:auto !important;
+    top:auto !important;
+    transform:none !important;
+
+    grid-column:2 !important;
+    grid-row:1 !important;
+    justify-self:center !important;
+    align-self:center !important;
+
+    display:block !important;
+    width:9px !important;
+    height:9px !important;
+    min-width:9px !important;
+    min-height:9px !important;
+
+    box-sizing:border-box !important;
+    border:2px solid var(--line) !important;
+    border-radius:50% !important;
+    background:#fff !important;
+    z-index:5 !important;
+  }
+
+  /* Combinaciones: columna izquierda, alineadas con su estación */
+  .combos{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+
+    grid-column:1 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    align-self:center !important;
+
+    width:auto !important;
+    min-width:0 !important;
+    margin:0 9px 0 0 !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:4px !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    z-index:6 !important;
+  }
+
+  .combo{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    min-height:18px !important;
+
+    border:2px solid #fff !important;
+    border-radius:50% !important;
+    box-shadow:0 0 0 1px rgba(0,0,0,.10) !important;
+
+    font-family:"Archivo",Arial,sans-serif !important;
+    font-size:9px !important;
+    font-weight:700 !important;
+    line-height:1 !important;
+  }
+
+  /* Nombre de estación: tercera columna */
+  .station-content{
+    position:relative !important;
+    grid-column:3 !important;
+    grid-row:1 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    min-width:0 !important;
+    padding-left:10px !important;
+    z-index:4 !important;
+  }
+
+  /* Neutralizar cualquier nodo viejo generado por pseudo-elementos */
+  .panel li::before{
+    content:none !important;
+    display:none !important;
+  }
+
+  /* H: texto negro, pero línea/nodos amarillos */
+  .line-card[data-line="H"] .panel li{
+    color:#111 !important;
+  }
+  .line-card[data-line="H"] .panel ul::before{
+    background:var(--line) !important;
+  }
+  .line-card[data-line="H"] .station-node{
+    border-color:var(--line) !important;
+  }
+
+  /* Si queda alguna conexión ferroviaria en otras líneas,
+     ubicarla dentro de la primera columna en móvil. */
+  .railway-connection{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+    grid-column:1 !important;
+    grid-row:1 !important;
+    justify-self:end !important;
+    width:auto !important;
+    margin-right:9px !important;
+  }
+}
+
+@media (max-width:600px){
+  .panel{
+    padding:22px 12px 28px !important;
+  }
+
+  .panel ul::before{
+    left:75px !important; /* 64 + 22/2 */
+  }
+
+  .panel li{
+    grid-template-columns:64px 22px minmax(0,1fr) !important;
+    min-height:37px !important;
+    font-size:16px !important;
+  }
+
+  .station-content{
+    padding-left:9px !important;
+  }
+
+  .combos{
+    margin-right:7px !important;
+  }
+}
