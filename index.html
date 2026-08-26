@@ -32,11 +32,12 @@
 <a aria-label="LinkedIn oficial de Subterráneos de Buenos Aires" class="social-hit linkedin" href="https://www.linkedin.com/company/subteba/" rel="noopener noreferrer" target="_blank"></a>
 </div>
 <div class="mobile-header"><a aria-label="Inicio" class="mobile-logo-link" href="#top"><img alt="Subte" class="mobile-subte-logo" src="mobile_subte_logo.png"/></a><button aria-expanded="false" aria-label="Abrir menú" class="mobile-menu-toggle" type="button"><span></span><span></span><span></span></button></div></div>
-<section class="hero-carousel" id="heroCarousel">
-<div class="slides">
-<article class="slide active planner-slide" data-slide="0">
-<div class="shade"></div>
-<div class="hero-content">
+<section aria-roledescription="carousel" class="hero-carousel clean-carousel" id="heroCarousel">
+<div class="clean-slides">
+<article aria-hidden="false" class="clean-slide clean-slide-planner active" data-slide="0">
+<img alt="" class="clean-slide-image" src="assets/carousel_planifica.jpg"/>
+<div class="clean-overlay"></div>
+<div class="clean-copy clean-planner-copy">
 <h1>Planificá tu viaje</h1>
 <div class="planner">
 <div class="pick">
@@ -53,25 +54,49 @@
 </div>
 </div>
 </article>
-<article class="slide artwork-slide slide-desasbestizado" data-mobile-bg="assets/desasbestizado_mobile_bg.webp" data-slide="1">
-<img alt="Plan de Desasbestizado" data-desktop-src="assets/desasbestizado.png" data-mobile-src="assets/desasbestizado_mobile.webp" src="assets/desasbestizado.png"/>
-<div class="mobile-slide-copy"><h2>Plan de Desasbestizado</h2><p>Conocé el plan de trabajo y las medidas implementadas en la red.</p></div></article>
-<article class="slide artwork-slide slide-linea-f" data-mobile-bg="assets/linea_f_mobile_bg.webp" data-slide="2">
-<img alt="Nueva Línea F" data-desktop-src="assets/linea_f.png" data-mobile-src="assets/linea_f_mobile.webp" src="assets/linea_f.png"/>
-<div class="mobile-slide-copy"><h2>Nueva Línea F</h2><p>Conocé el proyecto para la nueva línea de subte.</p></div></article>
-<article class="slide artwork-slide slide-bicicletas" data-mobile-bg="assets/bicicletas_mobile_bg.webp" data-slide="3">
-<img alt="Traslado de bicicletas en el subte" data-desktop-src="assets/bicicletas.png" data-mobile-src="assets/bicicletas_mobile.webp" src="assets/bicicletas.png"/>
-<div class="mobile-slide-copy"><h2>Traslado de bicicletas en el subte</h2><p>Conocé las normas para subir al subte con bici.</p></div></article>
-<article class="slide artwork-slide slide-renovacion" data-mobile-bg="assets/renovacion_mobile_bg.webp" data-slide="4">
-<img alt="Plan de Renovación Integral de Estaciones" data-desktop-src="assets/renovacion.png" data-mobile-src="assets/renovacion_mobile.webp" src="assets/renovacion.png"/>
-<div class="mobile-slide-copy"><h2>Plan de Renovación Integral de Estaciones</h2><p>Obras para mejorar la infraestructura y la experiencia de viaje.</p></div></article>
+<article aria-hidden="true" class="clean-slide clean-slide-renovacion" data-slide="1">
+<img alt="" class="clean-slide-image" src="assets/carousel_renovacion.jpg"/>
+<div class="clean-overlay"></div>
+<div class="clean-copy">
+<h2>Plan de Renovación<br/>Integral de Estaciones</h2>
+<div class="clean-rule"></div>
+<p>Las obras tienen como objetivo mejorar la infraestructura existente y la experiencia de viaje de los usuarios y usuarias.</p>
 </div>
-<div aria-label="Cambiar slide" class="carousel-dots">
-<button aria-label="Planificá tu viaje" class="active" data-go="0" type="button"></button>
-<button aria-label="Plan de Desasbestizado" data-go="1" type="button"></button>
-<button aria-label="Nueva Línea F" data-go="2" type="button"></button>
-<button aria-label="Traslado de bicicletas" data-go="3" type="button"></button>
-<button aria-label="Plan de Renovación Integral" data-go="4" type="button"></button>
+</article>
+<article aria-hidden="true" class="clean-slide clean-slide-bicicletas" data-slide="2">
+<img alt="" class="clean-slide-image" src="assets/carousel_bicicletas.jpg"/>
+<div class="clean-overlay"></div>
+<div class="clean-copy">
+<h2>Traslado de bicicletas<br/>en el subte</h2>
+<div class="clean-rule"></div>
+<p>Conocé las normas para subir al subte con bici.</p>
+</div>
+</article>
+<article aria-hidden="true" class="clean-slide clean-slide-desasbestizado" data-slide="3">
+<img alt="" class="clean-slide-image" src="assets/carousel_desasbestizado.jpg"/>
+<div class="clean-overlay"></div>
+<div class="clean-copy">
+<h2>Plan de<br/>Desasbestizado</h2>
+<div class="clean-rule"></div>
+<p>Conocé las normas para subir al subte con bici.</p>
+</div>
+</article>
+<article aria-hidden="true" class="clean-slide clean-slide-lineaf" data-slide="4">
+<img alt="" class="clean-slide-image" src="assets/carousel_linea_f.webp"/>
+<div class="clean-overlay"></div>
+<div class="clean-copy">
+<h2>Nueva<br/>Línea F</h2>
+<div class="clean-rule"></div>
+<p>Conocé el proyecto para la nueva línea de subte.</p>
+</div>
+</article>
+</div>
+<div aria-label="Cambiar slide" class="clean-dots">
+<button aria-current="true" aria-label="Planificá tu viaje" class="active" data-go="0" type="button"></button>
+<button aria-label="Plan de Renovación Integral de Estaciones" data-go="1" type="button"></button>
+<button aria-label="Traslado de bicicletas en el subte" data-go="2" type="button"></button>
+<button aria-label="Plan de Desasbestizado" data-go="3" type="button"></button>
+<button aria-label="Nueva Línea F" data-go="4" type="button"></button>
 </div>
 </section>
 <section aria-label="Estado del servicio" class="mobile-service-menu">
@@ -188,7 +213,6 @@
 <span class="lower-anchor lower-horarios" id="horarios"></span>
 <img alt="Tarifas y horarios" class="svgpart" src="lower_v29.webp?v=30"/>
 <div class="mobile-lower">
-
 <section aria-label="Tarifas" class="mobile-fares">
 <h2>TARIFAS</h2>
 <div class="mobile-fares-hero">
@@ -242,7 +266,6 @@
 </article>
 </div>
 </section>
-
 <section aria-label="Horarios" class="mobile-schedule">
 <h2>HORARIOS</h2>
 <div class="mobile-start-service">
@@ -391,7 +414,7 @@ document.getElementById('swap').onclick=()=>{ [origin.value,dest.value]=[dest.va
 
 
 </script>
-<script src="carousel_v29.js?v=29"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   const btn = document.querySelector('.mobile-menu-toggle');
@@ -413,43 +436,6 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script><script>
-(function(){
-  function applyMobileCarouselAssets(){
-    const mobile = window.matchMedia('(max-width: 600px)').matches;
-    document.querySelectorAll('#heroCarousel .artwork-slide img[data-mobile-src]').forEach(img => {
-      img.src = mobile ? img.dataset.mobileSrc : img.dataset.desktopSrc;
-    });
-  }
-  applyMobileCarouselAssets();
-  window.addEventListener('resize', applyMobileCarouselAssets);
-})();
-</script><script>
-(function(){
-  function applyMobileSlideBackgrounds(){
-    const mobile = window.matchMedia('(max-width: 600px)').matches;
-    document.querySelectorAll('#heroCarousel .artwork-slide[data-mobile-bg]').forEach(slide => {
-      if (mobile){
-        slide.style.backgroundImage = `linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.10)), url("${slide.dataset.mobileBg}")`;
-      } else {
-        slide.style.backgroundImage = '';
-      }
-    });
-  }
-  applyMobileSlideBackgrounds();
-  window.addEventListener('resize', applyMobileSlideBackgrounds);
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.mobile-service-toggle');
-    const panel = document.querySelector('.mobile-service-panel');
-    if(btn && panel){
-      btn.addEventListener('click', () => {
-        const open = panel.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-  });
-})();
-</script><script>
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.schedule-line-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -461,4 +447,4 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 });
-</script></body></html>
+</script><script src="carousel_clean.js?v=67"></script></body></html>
