@@ -4015,3 +4015,242 @@ img,svg{max-width:100%;height:auto}
     min-height:14px !important;
   }
 }
+
+/* ============================================================
+   V68 — ESTADO DEL SUBTE EN VIVO
+   Fuente: página oficial del GCBA vía Cloudflare Worker.
+   ============================================================ */
+
+.desktop-live-status{
+  display:block;
+  width:100%;
+  padding:18px 12% 0;
+  background:#fff;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif;
+}
+
+.desktop-status-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:18px;
+  align-items:start;
+  max-width:980px;
+  margin:0 auto 12px;
+}
+
+.desktop-status-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  cursor:help;
+}
+
+.desktop-line-badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  color:#fff;
+  font-size:20px;
+  font-weight:700;
+  line-height:1;
+}
+
+.desktop-status-bar{
+  display:block;
+  width:31px;
+  height:5px;
+  margin:7px 0 5px;
+}
+
+.desktop-status-label{
+  color:#666;
+  font-size:10px;
+  line-height:1.05;
+  font-weight:600;
+}
+
+.status-normal{background:#1fc55b !important}
+.status-delay{background:#ed9818 !important}
+.status-interrupted{background:#de3427 !important}
+.status-alert{background:#8d8d8d !important}
+
+.desktop-live-alert{
+  margin:0 -13.65% 0;
+  padding:6px 12%;
+  background:#fff1c7;
+  color:#666;
+  text-align:center;
+  font-size:9px;
+  line-height:1.2;
+  font-style:italic;
+}
+
+.desktop-live-meta,
+.mobile-live-meta{
+  padding:5px 0 8px;
+  color:#888;
+  text-align:center;
+  font-size:9px;
+}
+
+.mid-live-content{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* Mobile pills can now also show generic alerts in gray. */
+.mobile-status-pill.status-alert{
+  background:#8d8d8d !important;
+}
+
+@media(max-width:600px){
+  .desktop-live-status{display:none !important}
+  .mid-live-content{display:none !important}
+  .mobile-live-meta{
+    padding:9px 0 2px !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:10px !important;
+    color:#888 !important;
+  }
+}
+
+/* ============================================================
+   V69 — ESTADO DE LÍNEAS: BOCHITAS + COLORES DINÁMICOS
+   ============================================================ */
+
+.desktop-live-status{
+  display:block !important;
+  background:#fff !important;
+  padding:18px 10% 0 !important;
+}
+
+.desktop-status-grid{
+  display:grid !important;
+  grid-template-columns:repeat(7,minmax(72px,1fr)) !important;
+  gap:18px !important;
+  align-items:start !important;
+  max-width:1020px !important;
+  margin:0 auto 14px !important;
+}
+
+.desktop-status-item{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  text-align:center !important;
+  min-width:72px !important;
+}
+
+.desktop-line-badge,
+.mobile-line-badge{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 auto !important;
+  width:36px !important;
+  height:36px !important;
+  min-width:36px !important;
+  min-height:36px !important;
+  border-radius:50% !important;
+  color:#fff !important;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:21px !important;
+  line-height:1 !important;
+  font-weight:700 !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.line-a{background:#09add2 !important;}
+.line-b{background:#f31f34 !important;}
+.line-c{background:#0b4fb4 !important;}
+.line-d{background:#098f78 !important;}
+.line-e{background:#902a98 !important;}
+.line-h{background:#ffd000 !important;color:#111 !important;}
+.line-p{background:#ffb31a !important;}
+
+.desktop-status-bar{
+  display:block !important;
+  width:31px !important;
+  height:5px !important;
+  margin:7px 0 5px !important;
+  border-radius:0 !important;
+}
+
+.desktop-status-bar.status-normal{background:#20c05a !important;}
+.desktop-status-bar.status-delay{background:#ef9918 !important;}
+.desktop-status-bar.status-interrupted{background:#dd382b !important;}
+.desktop-status-bar.status-alert{background:#8d8d8d !important;}
+
+.desktop-status-label{
+  display:block !important;
+  color:#555 !important;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:10px !important;
+  line-height:1.05 !important;
+  font-weight:600 !important;
+}
+
+.mobile-status-pill.status-normal{background:#20c05a !important;}
+.mobile-status-pill.status-delay{background:#ef9918 !important;}
+.mobile-status-pill.status-interrupted{background:#dd382b !important;}
+.mobile-status-pill.status-alert{background:#8d8d8d !important;}
+
+@media(max-width:600px){
+  .desktop-live-status{display:none !important;}
+}
+
+/* ============================================================
+   V70 — Estado de líneas totalmente dinámico
+   La rayita y el texto cambian juntos según el estado recibido.
+   ============================================================ */
+
+.desktop-status-bar.status-normal,
+.mobile-status-pill.status-normal{
+  background:#20c05a !important;
+}
+
+.desktop-status-bar.status-delay,
+.mobile-status-pill.status-delay{
+  background:#ef9918 !important;
+}
+
+.desktop-status-bar.status-interrupted,
+.mobile-status-pill.status-interrupted{
+  background:#dd382b !important;
+}
+
+.desktop-status-bar.status-alert,
+.mobile-status-pill.status-alert{
+  background:#8d8d8d !important;
+}
+
+/* Evitar que estilos viejos "congelen" colores/textos */
+.desktop-status-bar{
+  transition:background-color .15s ease !important;
+}
+
+.desktop-status-label,
+.mobile-status-pill{
+  transition:background-color .15s ease !important;
+}
+
+/* V71 — Motivo visible sólo para demora/interrupción */
+.desktop-status-reason{
+  display:block !important; max-width:120px !important; margin-top:4px !important;
+  color:#666 !important; font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:8px !important; line-height:1.12 !important; font-weight:500 !important;
+}
+
+/* V73 — eliminar franja beige de avisos generales */
+#status-alert, #service-alert, #network-alert,
+.status-alert, .service-alert, .network-alert,
+.alert-strip, .status-ticker, .service-ticker {
+  display: none !important;
+}
