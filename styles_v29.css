@@ -2411,3 +2411,146 @@ img,svg{max-width:100%;height:auto}
     right:10px !important;
   }
 }
+
+/* ============================================================
+   V58 — MOBILE: ALINEACIÓN DE ESTACIONES + MARCADORES DEL MAPA
+   Corrige únicamente los dos problemas vistos en las capturas móviles.
+   ============================================================ */
+
+@media (max-width:900px){
+
+  /* ---------- DESPLEGABLES DE ESTACIONES ----------
+
+     En escritorio:
+       línea ≈ x 104
+       texto ≈ x 136
+
+     En V56 el padding móvil se redujo demasiado y el texto quedó
+     prácticamente encima de la línea. Restablecemos una separación
+     real entre combinaciones / línea / texto.
+  */
+  .panel{
+    position:relative !important;
+    padding-left:128px !important;
+    padding-right:16px !important;
+    overflow:hidden !important;
+  }
+
+  .panel ul{
+    overflow:visible !important;
+  }
+
+  /* eje vertical del recorrido */
+  .rail{
+    left:94px !important;
+    width:6px !important;
+    top:29px !important;
+    bottom:34px !important;
+  }
+
+  /* centro del nodo = centro de la línea:
+     94 + 3 - 128 = -31px respecto del inicio del texto */
+  .station-node{
+    left:-31px !important;
+    top:50% !important;
+    transform:translate(-50%,-50%) !important;
+    width:9px !important;
+    height:9px !important;
+    border-width:2px !important;
+  }
+
+  /* bochitas a la izquierda de la línea, sin tocarla */
+  .combos{
+    left:-111px !important;
+    width:62px !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    justify-content:flex-end !important;
+    gap:4px !important;
+  }
+
+  .combo{
+    width:18px !important;
+    height:18px !important;
+    min-width:18px !important;
+    min-height:18px !important;
+    font-size:9px !important;
+  }
+
+  .panel li{
+    min-height:34px !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:16px !important;
+    line-height:1.1 !important;
+    font-weight:700 !important;
+  }
+
+  /* ---------- MAPA ----------
+
+     El error anterior era que el mapa medía 900/950px pero los puntos
+     se posicionaban con porcentajes respecto de un contenedor del ancho
+     del celular. Ahora imagen y capa de marcadores comparten EXACTAMENTE
+     el mismo ancho.
+  */
+  .map-wrap{
+    width:100% !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  .map-elevation-wrap{
+    position:relative !important;
+    width:950px !important;
+    min-width:950px !important;
+    max-width:none !important;
+    overflow:visible !important;
+  }
+
+  .map-elevation-base{
+    display:block !important;
+    width:950px !important;
+    min-width:950px !important;
+    max-width:none !important;
+    height:auto !important;
+  }
+
+  /* los puntos vuelven a calcularse sobre los 950px reales del mapa */
+  .elevation-marker{
+    position:absolute !important;
+  }
+}
+
+@media (max-width:600px){
+  /* Mantener exactamente la misma geometría en teléfono;
+     no volver a sobreescribir el padding con los valores de V56. */
+  .panel{
+    padding-left:128px !important;
+    padding-right:14px !important;
+  }
+
+  .rail{
+    left:94px !important;
+  }
+
+  .station-node{
+    left:-31px !important;
+  }
+
+  .combos{
+    left:-111px !important;
+    width:62px !important;
+  }
+
+  .panel li{
+    font-size:16px !important;
+    min-height:34px !important;
+  }
+
+  .map-elevation-wrap,
+  .map-elevation-base{
+    width:950px !important;
+    min-width:950px !important;
+    max-width:none !important;
+  }
+}
