@@ -3303,3 +3303,227 @@ img,svg{max-width:100%;height:auto}
     line-height:1.25 !important;
   }
 }
+
+/* ============================================================
+   V64 — MOBILE: ORDEN DE DESPLEGABLES A, B, C, D, E, H, P
+   Sólo cambia el orden en móvil. Desktop queda intacto.
+   ============================================================ */
+
+@media (max-width:600px){
+
+  /* Unificamos visualmente las dos columnas desktop en una sola lista móvil,
+     sin alterar el HTML ni el layout de escritorio. */
+  .stations .grid{
+    display:flex !important;
+    flex-direction:column !important;
+    width:100% !important;
+  }
+
+  .stations .line-column{
+    display:contents !important;
+  }
+
+  .stations .line-card[data-line="A"]{order:1 !important;}
+  .stations .line-card[data-line="B"]{order:2 !important;}
+  .stations .line-card[data-line="C"]{order:3 !important;}
+  .stations .line-card[data-line="D"]{order:4 !important;}
+  .stations .line-card[data-line="E"]{order:5 !important;}
+  .stations .line-card[data-line="H"]{order:6 !important;}
+  .stations .line-card[data-line="P"]{order:7 !important;}
+
+  .stations .line-card{
+    width:100% !important;
+  }
+}
+
+/* ============================================================
+   V65 — HORARIOS RESPONSIVE MOBILE
+   Desktop conserva lower_v29.webp original.
+   ============================================================ */
+
+.mobile-lower{display:none}
+
+@media (max-width:600px){
+
+  /* Hide desktop lower artwork */
+  .lower-wrap > img.svgpart{
+    display:none !important;
+  }
+
+  .lower-wrap{
+    overflow:visible !important;
+    background:#fff !important;
+  }
+
+  .mobile-lower{
+    display:block !important;
+    width:100% !important;
+    background:#fff !important;
+  }
+
+  .mobile-tarifas{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    background:#fff !important;
+  }
+
+  .mobile-schedule{
+    padding:28px 0 24px !important;
+    background:#fff !important;
+  }
+
+  .mobile-schedule h2{
+    margin:0 0 28px !important;
+    padding:0 20px !important;
+    text-align:center !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:34px !important;
+    line-height:1 !important;
+    font-weight:500 !important;
+  }
+
+  .mobile-yellow-title{
+    display:inline-flex !important;
+    align-items:center !important;
+    min-height:48px !important;
+    padding:0 18px !important;
+    background:#ffd400 !important;
+    color:#111 !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:19px !important;
+    font-weight:700 !important;
+  }
+
+  .mobile-start-service{
+    margin-bottom:26px !important;
+  }
+
+  .mobile-start-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+    margin-top:0 !important;
+    border-top:12px solid #111 !important;
+  }
+
+  .mobile-start-grid > div{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:7px !important;
+    padding:18px 20px !important;
+    border-bottom:1px solid #e5e5e5 !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  }
+
+  .mobile-start-grid strong{
+    font-size:16px !important;
+  }
+
+  .mobile-start-grid span{
+    font-size:14px !important;
+    line-height:1.25 !important;
+  }
+
+  .mobile-last-title{
+    margin-bottom:0 !important;
+  }
+
+  .mobile-schedule-accordion{
+    border-top:12px solid #111 !important;
+  }
+
+  .schedule-line{
+    border-bottom:1px solid #e7e7e7 !important;
+  }
+
+  .schedule-line-toggle{
+    display:grid !important;
+    grid-template-columns:48px 1fr 26px !important;
+    align-items:center !important;
+    gap:12px !important;
+    width:100% !important;
+    min-height:66px !important;
+    padding:8px 18px !important;
+    border:0 !important;
+    background:#fff !important;
+    color:#111 !important;
+    text-align:left !important;
+  }
+
+  .schedule-line-toggle .mobile-line-badge{
+    width:38px !important;
+    height:38px !important;
+    font-size:21px !important;
+  }
+
+  .schedule-line-name{
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:19px !important;
+    font-weight:700 !important;
+  }
+
+  .schedule-chevron{
+    width:16px !important;
+    height:16px !important;
+    border-right:3px solid #111 !important;
+    border-bottom:3px solid #111 !important;
+    transform:rotate(45deg) translateY(-3px) !important;
+  }
+
+  .schedule-line.is-open .schedule-chevron{
+    transform:rotate(225deg) translate(-3px,-3px) !important;
+  }
+
+  .schedule-line-panel{
+    display:none !important;
+    padding:0 18px 14px 78px !important;
+    background:#fafafa !important;
+  }
+
+  .schedule-line.is-open .schedule-line-panel{
+    display:block !important;
+  }
+
+  .schedule-terminal{
+    display:grid !important;
+    grid-template-columns:1fr 1fr 1fr !important;
+    gap:7px 10px !important;
+    padding:14px 0 !important;
+    border-bottom:1px solid #ddd !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  }
+
+  .schedule-terminal strong{
+    grid-column:1 / -1 !important;
+    font-size:15px !important;
+  }
+
+  .schedule-terminal span{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:2px !important;
+    font-size:11px !important;
+    color:#666 !important;
+  }
+
+  .schedule-terminal span b{
+    font-size:14px !important;
+    color:#111 !important;
+  }
+
+  .schedule-note{
+    padding:12px 0 !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:11px !important;
+    line-height:1.3 !important;
+    color:#555 !important;
+  }
+
+  .schedule-alt{
+    background:#f0f0f0 !important;
+    margin:0 -18px !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+  }
+}
