@@ -11,4 +11,4 @@ Cambios:
 
 Archivos nuevos:
 - subvenirs.html
-- subvenirs.svg 
+- subvenirs.svg

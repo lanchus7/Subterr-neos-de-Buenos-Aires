@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="styles_v29.css?v=31" rel="stylesheet"/></head><body>
+<link href="styles_v29.css?v=56" rel="stylesheet"/></head><body>
 <div class="exact-header" id="top">
 <div aria-hidden="true" class="nosotros-cleanup"></div>
 <img alt="Encabezado del sitio" src="header_v29.webp?v=47"/>
@@ -185,4 +185,25 @@ document.getElementById('swap').onclick=()=>{ [origin.value,dest.value]=[dest.va
 
 </script>
 <script src="carousel_v29.js?v=29"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.real-nav');
+  if (!btn || !nav) return;
+
+  btn.addEventListener('click', function(){
+    const open = nav.classList.toggle('mobile-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('mobile-open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+});
+</script>
+
 </body></html>

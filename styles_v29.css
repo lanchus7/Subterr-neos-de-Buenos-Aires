@@ -1938,3 +1938,304 @@ header nav{
     padding:8px 10px 9px !important;
   }
 }
+
+/* ============================================================
+   V56 — RESPONSIVE MOBILE
+   Objetivo: que la web deje de ser una maqueta de escritorio encogida
+   y se reorganice correctamente en pantallas chicas.
+   ============================================================ */
+
+.mobile-menu-toggle{display:none}
+
+/* Evitar desbordes generales */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%;height:auto}
+
+/* Tablets */
+@media (max-width: 900px){
+  /* HEADER */
+  .exact-header{
+    position:relative !important;
+    min-height:110px !important;
+    overflow:visible !important;
+  }
+
+  .exact-header > img{
+    width:100% !important;
+    height:auto !important;
+  }
+
+  /* ocultamos la fila desktop y usamos menú hamburguesa */
+  .real-nav{
+    display:none !important;
+    position:absolute !important;
+    left:0 !important;
+    right:0 !important;
+    top:100% !important;
+    z-index:500 !important;
+    background:#fff !important;
+    padding:12px 18px 18px !important;
+    grid-template-columns:1fr !important;
+    gap:0 !important;
+    box-shadow:0 8px 20px rgba(0,0,0,.15) !important;
+  }
+  .real-nav.mobile-open{display:block !important}
+
+  .real-nav > a{
+    display:block !important;
+    width:100% !important;
+    padding:13px 4px !important;
+    border-bottom:1px solid #eee !important;
+    text-align:left !important;
+    justify-self:stretch !important;
+    font-size:16px !important;
+  }
+
+  .nav-logo-space{display:none !important}
+
+  .mobile-menu-toggle{
+    display:flex !important;
+    position:absolute !important;
+    right:18px !important;
+    top:68px !important;
+    z-index:650 !important;
+    width:42px !important;
+    height:42px !important;
+    padding:9px !important;
+    border:0 !important;
+    background:#fff !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    gap:5px !important;
+    cursor:pointer !important;
+  }
+  .mobile-menu-toggle span{
+    display:block !important;
+    width:100% !important;
+    height:3px !important;
+    background:#111 !important;
+  }
+
+  /* HERO/CAROUSEL */
+  .hero-carousel{
+    height:62vw !important;
+    min-height:360px !important;
+    max-height:none !important;
+  }
+  .hero-carousel .artwork-slide > img{
+    object-fit:cover !important;
+    object-position:center !important;
+  }
+
+  .hero-content{
+    left:8% !important;
+    top:18% !important;
+    width:84% !important;
+  }
+  .hero h1,
+  .hero-content h1{
+    font-size:clamp(30px,8vw,48px) !important;
+    line-height:1 !important;
+    letter-spacing:-1px !important;
+    margin-bottom:22px !important;
+  }
+  .planner{
+    width:78% !important;
+  }
+  .pick label{
+    font-size:20px !important;
+  }
+  .pick input{
+    height:34px !important;
+    font-size:16px !important;
+  }
+  .swap{
+    right:-42px !important;
+    top:50px !important;
+    font-size:34px !important;
+  }
+
+  /* Dots */
+  #heroCarousel .carousel-dots button{
+    width:22px !important;
+    height:22px !important;
+  }
+
+  /* ESTADO DE LÍNEAS / MID IMAGE */
+  .svgpart,
+  .service-status-base,
+  .service-reason-base{
+    width:100% !important;
+    height:auto !important;
+  }
+
+  /* NOVEDADES / GRIDS */
+  .news-grid,
+  .grid,
+  .stations-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .news-card{
+    min-height:260px !important;
+  }
+
+  /* DESPLEGABLES DE LÍNEAS */
+  .line-card{
+    width:100% !important;
+  }
+  .panel{
+    padding-left:112px !important;
+  }
+
+  /* MAPA */
+  .map-wrap,
+  .map-elevation-wrap{
+    overflow-x:auto !important;
+  }
+  .map-elevation-base{
+    min-width:900px !important;
+    width:900px !important;
+    max-width:none !important;
+  }
+
+  /* TARIFAS / HORARIOS */
+  .lower-wrap img{
+    width:100% !important;
+    height:auto !important;
+  }
+
+  /* tooltips: no salirse de pantalla */
+  .elevation-tooltip,
+  .service-reason-tooltip{
+    max-width:220px !important;
+    width:220px !important;
+    font-size:13px !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px){
+  /* En móvil no usamos el header desktop completo como layout:
+     sólo dejamos la franja superior y el logo; el menú va por hamburguesa. */
+  .exact-header{
+    min-height:92px !important;
+    background:#fff !important;
+  }
+
+  .mobile-menu-toggle{
+    top:48px !important;
+    right:12px !important;
+  }
+
+  /* Hero: altura más natural de celular */
+  .hero-carousel{
+    height:78vh !important;
+    min-height:520px !important;
+    max-height:680px !important;
+  }
+
+  .hero-carousel .planner-slide{
+    background-position:center center !important;
+  }
+
+  .hero-carousel .artwork-slide > img{
+    object-fit:cover !important;
+    object-position:center !important;
+  }
+
+  .hero-content{
+    left:7% !important;
+    top:14% !important;
+    width:86% !important;
+  }
+
+  .hero-content h1{
+    font-size:36px !important;
+    max-width:90% !important;
+  }
+
+  .planner{
+    width:82% !important;
+  }
+
+  .swap{
+    right:-38px !important;
+  }
+
+  /* Mantener los cinco dots accesibles */
+  #heroCarousel .carousel-dots button:nth-child(1){left:30% !important}
+  #heroCarousel .carousel-dots button:nth-child(2){left:40% !important}
+  #heroCarousel .carousel-dots button:nth-child(3){left:50% !important}
+  #heroCarousel .carousel-dots button:nth-child(4){left:60% !important}
+  #heroCarousel .carousel-dots button:nth-child(5){left:70% !important}
+
+  /* Titulares */
+  .stations h2,
+  .map-section h2{
+    font-size:34px !important;
+  }
+
+  /* Acordeones: una sola columna y tamaño más cómodo */
+  .grid{
+    display:block !important;
+  }
+  .line-column{
+    width:100% !important;
+  }
+  .line-card{
+    margin-bottom:14px !important;
+  }
+  .line-tab{
+    min-height:74px !important;
+    padding:0 18px !important;
+    font-size:30px !important;
+  }
+  .head-badge{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    font-size:20px !important;
+  }
+
+  .panel{
+    padding-left:104px !important;
+    padding-right:14px !important;
+  }
+  .panel li{
+    font-size:16px !important;
+    min-height:32px !important;
+  }
+
+  /* Mapa horizontal desplazable, en vez de comprimirlo hasta ilegibilidad */
+  .map-elevation-wrap{
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .map-elevation-base{
+    width:950px !important;
+    min-width:950px !important;
+  }
+
+  /* Novedades: una tarjeta debajo de otra */
+  .news-grid{
+    display:block !important;
+  }
+  .news-card{
+    width:100% !important;
+    margin-bottom:12px !important;
+    min-height:260px !important;
+  }
+
+  /* Lower artwork (tarifas / horarios): legible mediante scroll si hace falta */
+  .lower-wrap{
+    overflow-x:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  .lower-wrap > img{
+    min-width:760px !important;
+    width:760px !important;
+    max-width:none !important;
+  }
+}
