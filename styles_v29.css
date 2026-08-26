@@ -3105,3 +3105,201 @@ img,svg{max-width:100%;height:auto}
     display:none !important;
   }
 }
+
+/* ============================================================
+   V63 — MOBILE: carrusel completo + estado de líneas tipo menú
+   ============================================================ */
+
+.mobile-service-menu,
+.mobile-slide-copy{
+  display:none;
+}
+
+@media (max-width:600px){
+
+  /* -------- CARRUSEL: sin scroll ni recorte de texto -------- */
+
+  .hero-carousel.artwork-active{
+    height:390px !important;
+    min-height:390px !important;
+    max-height:390px !important;
+  }
+
+  .hero-carousel .artwork-slide{
+    position:absolute !important;
+    inset:0 !important;
+    display:none !important;
+    background-size:cover !important;
+    background-position:center !important;
+    background-repeat:no-repeat !important;
+    overflow:hidden !important;
+  }
+
+  .hero-carousel .artwork-slide.active{
+    display:block !important;
+  }
+
+  /* Hide baked desktop artwork in mobile; use clean background crop + HTML copy. */
+  .hero-carousel .artwork-slide > img{
+    display:none !important;
+  }
+
+  .mobile-slide-copy{
+    display:block !important;
+    position:absolute !important;
+    left:24px !important;
+    right:24px !important;
+    bottom:62px !important;
+    z-index:10 !important;
+    color:#fff !important;
+    text-align:left !important;
+  }
+
+  .mobile-slide-copy h2{
+    margin:0 0 14px !important;
+    max-width:95% !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:34px !important;
+    line-height:.98 !important;
+    font-weight:700 !important;
+    letter-spacing:-1px !important;
+  }
+
+  .mobile-slide-copy h2::after{
+    content:"" !important;
+    display:block !important;
+    width:72% !important;
+    height:4px !important;
+    margin-top:14px !important;
+    background:#fff !important;
+  }
+
+  .mobile-slide-copy p{
+    margin:0 !important;
+    max-width:92% !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:16px !important;
+    line-height:1.18 !important;
+    font-weight:500 !important;
+  }
+
+  #heroCarousel .carousel-dots{
+    bottom:22px !important;
+  }
+
+  /* -------- ESTADO DE LÍNEAS: tipo menú responsive -------- */
+
+  .mobile-service-status{
+    display:none !important;
+  }
+
+  .mobile-service-menu{
+    display:block !important;
+    width:100% !important;
+    background:#fff !important;
+    border-top:1px solid #e7e7e7 !important;
+    border-bottom:1px solid #e7e7e7 !important;
+  }
+
+  .mobile-service-toggle{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    width:100% !important;
+    min-height:66px !important;
+    padding:0 20px !important;
+    border:0 !important;
+    background:#fff !important;
+    color:#111 !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:20px !important;
+    font-weight:700 !important;
+    text-align:left !important;
+  }
+
+  .service-chevron{
+    display:block !important;
+    width:18px !important;
+    height:18px !important;
+    border-right:3px solid #111 !important;
+    border-bottom:3px solid #111 !important;
+    transform:rotate(45deg) translateY(-3px) !important;
+    transition:transform .18s ease !important;
+  }
+
+  .mobile-service-toggle[aria-expanded="true"] .service-chevron{
+    transform:rotate(225deg) translate(-3px,-3px) !important;
+  }
+
+  .mobile-service-panel{
+    display:none !important;
+    padding:0 16px 14px !important;
+  }
+
+  .mobile-service-panel.is-open{
+    display:block !important;
+  }
+
+  .mobile-service-row{
+    display:grid !important;
+    grid-template-columns:46px 1fr auto !important;
+    grid-template-areas:
+      "badge name pill"
+      ". reason reason" !important;
+    align-items:center !important;
+    column-gap:12px !important;
+    row-gap:3px !important;
+    min-height:64px !important;
+    padding:10px 4px !important;
+    border-top:1px solid #ededed !important;
+  }
+
+  .mobile-service-row .mobile-line-badge{
+    grid-area:badge !important;
+    width:38px !important;
+    height:38px !important;
+    font-size:21px !important;
+  }
+
+  .mobile-line-name{
+    grid-area:name !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:18px !important;
+    font-weight:700 !important;
+    color:#111 !important;
+  }
+
+  .mobile-status-pill{
+    grid-area:pill !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    min-height:30px !important;
+    padding:0 11px !important;
+    border-radius:16px !important;
+    color:#fff !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:12px !important;
+    font-weight:700 !important;
+    white-space:nowrap !important;
+  }
+
+  .mobile-status-pill.status-normal{background:#19b957 !important}
+  .mobile-status-pill.status-delay{background:#e89417 !important}
+  .mobile-status-pill.status-interrupted{background:#dc3427 !important}
+
+  .mobile-service-reason{
+    grid-area:reason !important;
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:12px !important;
+    line-height:1.15 !important;
+    color:#666 !important;
+  }
+
+  .mobile-service-alert{
+    margin:10px -16px -14px !important;
+    padding:9px 18px !important;
+    background:#fff1c7 !important;
+    font-size:10px !important;
+    line-height:1.25 !important;
+  }
+}

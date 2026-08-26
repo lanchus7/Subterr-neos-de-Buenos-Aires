@@ -53,18 +53,18 @@
 </div>
 </div>
 </article>
-<article class="slide artwork-slide slide-desasbestizado" data-slide="1">
+<article class="slide artwork-slide slide-desasbestizado" data-mobile-bg="assets/desasbestizado_mobile_bg.webp" data-slide="1">
 <img alt="Plan de Desasbestizado" data-desktop-src="assets/desasbestizado.png" data-mobile-src="assets/desasbestizado_mobile.webp" src="assets/desasbestizado.png"/>
-</article>
-<article class="slide artwork-slide slide-linea-f" data-slide="2">
+<div class="mobile-slide-copy"><h2>Plan de Desasbestizado</h2><p>Conocé el plan de trabajo y las medidas implementadas en la red.</p></div></article>
+<article class="slide artwork-slide slide-linea-f" data-mobile-bg="assets/linea_f_mobile_bg.webp" data-slide="2">
 <img alt="Nueva Línea F" data-desktop-src="assets/linea_f.png" data-mobile-src="assets/linea_f_mobile.webp" src="assets/linea_f.png"/>
-</article>
-<article class="slide artwork-slide slide-bicicletas" data-slide="3">
+<div class="mobile-slide-copy"><h2>Nueva Línea F</h2><p>Conocé el proyecto para la nueva línea de subte.</p></div></article>
+<article class="slide artwork-slide slide-bicicletas" data-mobile-bg="assets/bicicletas_mobile_bg.webp" data-slide="3">
 <img alt="Traslado de bicicletas en el subte" data-desktop-src="assets/bicicletas.png" data-mobile-src="assets/bicicletas_mobile.webp" src="assets/bicicletas.png"/>
-</article>
-<article class="slide artwork-slide slide-renovacion" data-slide="4">
+<div class="mobile-slide-copy"><h2>Traslado de bicicletas en el subte</h2><p>Conocé las normas para subir al subte con bici.</p></div></article>
+<article class="slide artwork-slide slide-renovacion" data-mobile-bg="assets/renovacion_mobile_bg.webp" data-slide="4">
 <img alt="Plan de Renovación Integral de Estaciones" data-desktop-src="assets/renovacion.png" data-mobile-src="assets/renovacion_mobile.webp" src="assets/renovacion.png"/>
-</article>
+<div class="mobile-slide-copy"><h2>Plan de Renovación Integral de Estaciones</h2><p>Obras para mejorar la infraestructura y la experiencia de viaje.</p></div></article>
 </div>
 <div aria-label="Cambiar slide" class="carousel-dots">
 <button aria-label="Planificá tu viaje" class="active" data-go="0" type="button"></button>
@@ -75,20 +75,55 @@
 </div>
 </section>
 
-<section aria-label="Estado del servicio" class="mobile-service-status">
-<div class="mobile-service-grid">
-<div class="mobile-service-item"><span class="mobile-line-badge line-a">A</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
-<div class="mobile-service-item" title="Por problemas técnicos."><span class="mobile-line-badge line-b">B</span><span class="mobile-status-bar status-delay"></span><span class="mobile-status-text">Servicio<br/>con demora</span></div>
-<div class="mobile-service-item"><span class="mobile-line-badge line-c">C</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
-<div class="mobile-service-item"><span class="mobile-line-badge line-d">D</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
-<div class="mobile-service-item"><span class="mobile-line-badge line-e">E</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
-<div class="mobile-service-item"><span class="mobile-line-badge line-h">H</span><span class="mobile-status-bar status-normal"></span><span class="mobile-status-text">Servicio<br/>normal</span></div>
-<div class="mobile-service-item" title="Por medida de fuerza gremial."><span class="mobile-line-badge line-p">P</span><span class="mobile-status-bar status-interrupted"></span><span class="mobile-status-text">Servicio<br/>interrumpido</span></div>
+<section aria-label="Estado del servicio" class="mobile-service-menu">
+<button aria-expanded="true" class="mobile-service-toggle" type="button">
+<span>ESTADO DEL SERVICIO</span>
+<span aria-hidden="true" class="service-chevron"></span>
+</button>
+<div class="mobile-service-panel is-open">
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-a">A</span>
+<span class="mobile-line-name">Línea A</span>
+<span class="mobile-status-pill status-normal">Normal</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-b">B</span>
+<span class="mobile-line-name">Línea B</span>
+<span class="mobile-status-pill status-delay">Con demora</span>
+<span class="mobile-service-reason">Por problemas técnicos.</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-c">C</span>
+<span class="mobile-line-name">Línea C</span>
+<span class="mobile-status-pill status-normal">Normal</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-d">D</span>
+<span class="mobile-line-name">Línea D</span>
+<span class="mobile-status-pill status-normal">Normal</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-e">E</span>
+<span class="mobile-line-name">Línea E</span>
+<span class="mobile-status-pill status-normal">Normal</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-h">H</span>
+<span class="mobile-line-name">Línea H</span>
+<span class="mobile-status-pill status-normal">Normal</span>
+</div>
+<div class="mobile-service-row">
+<span class="mobile-line-badge line-p">P</span>
+<span class="mobile-line-name">Premetro</span>
+<span class="mobile-status-pill status-interrupted">Interrumpido</span>
+<span class="mobile-service-reason">Por medida de fuerza gremial.</span>
 </div>
 <div class="mobile-service-alert">
-    Línea A: Congreso y Loria cerradas por obras. / Línea B: Uruguay y Malabia cerradas por obras. / Línea D: Agüero y Plaza Italia cerradas por obras.
-  </div>
+      Línea A: Congreso y Loria cerradas por obras. / Línea B: Uruguay y Malabia cerradas por obras. / Línea D: Agüero y Plaza Italia cerradas por obras.
+    </div>
+</div>
 </section>
+
 <img alt="Novedades" class="mid-mobile-content" src="mid_mobile_content.webp"/>
 <div class="service-reason-wrap"><img alt="Estado del servicio y novedades" class="svgpart service-reason-base" src="mid_v29.webp?v=51"/><button aria-label="Línea B: Por problemas técnicos." class="service-reason-hit service-reason-hit--delay" data-line="B" style="--x:38.25%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea B</strong><span>Por problemas técnicos.</span></span></button><button aria-label="Línea P: Por medida de fuerza gremial." class="service-reason-hit service-reason-hit--interrupted" data-line="P" style="--x:67.35%;--y:5.55%;" type="button"><span class="service-reason-tooltip"><strong>Línea P</strong><span>Por medida de fuerza gremial.</span></span></button></div>
 <section class="stations">
@@ -231,5 +266,31 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   applyMobileCarouselAssets();
   window.addEventListener('resize', applyMobileCarouselAssets);
+})();
+</script><script>
+(function(){
+  function applyMobileSlideBackgrounds(){
+    const mobile = window.matchMedia('(max-width: 600px)').matches;
+    document.querySelectorAll('#heroCarousel .artwork-slide[data-mobile-bg]').forEach(slide => {
+      if (mobile){
+        slide.style.backgroundImage = `linear-gradient(90deg, rgba(0,0,0,.58), rgba(0,0,0,.10)), url("${slide.dataset.mobileBg}")`;
+      } else {
+        slide.style.backgroundImage = '';
+      }
+    });
+  }
+  applyMobileSlideBackgrounds();
+  window.addEventListener('resize', applyMobileSlideBackgrounds);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.mobile-service-toggle');
+    const panel = document.querySelector('.mobile-service-panel');
+    if(btn && panel){
+      btn.addEventListener('click', () => {
+        const open = panel.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  });
 })();
 </script></body></html>
