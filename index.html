@@ -9,14 +9,14 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="styles_v29.css?v=82" rel="stylesheet"/></head><body>
+<link href="styles_v29.css?v=85" rel="stylesheet"/></head><body>
 <div class="exact-header" id="top">
 <div aria-hidden="true" class="nosotros-cleanup"></div>
 <img alt="Encabezado del sitio" src="header_v29.webp?v=75"/>
 <!-- Real navigation row: the words themselves are the links -->
 <div class="nav-row-mask"></div>
 <nav aria-label="Navegación principal" class="real-nav">
-<a data-scroll="mapas" href="#mapas">ACCESIBILIDAD</a>
+<a data-scroll="accesibilidad" href="#accesibilidad">ACCESIBILIDAD</a>
 <a data-scroll="tarifas" href="#tarifas">TARIFAS</a>
 <a data-scroll="mapas" href="#mapas">MAPAS</a>
 <span aria-hidden="true" class="nav-logo-space"></span>
@@ -178,6 +178,7 @@
 </section>
 
 </div>
+<span class="menu-anchor" id="accesibilidad"></span>
 <section class="stations">
 <h2>ESTACIONES</h2>
 <div class="grid">
@@ -232,12 +233,13 @@
 </article></div>
 </div>
 </section>
-<section class="map-section" id="mapas">
+<span class="menu-anchor" id="mapas"></span>
+<section class="map-section">
 <h2>ESTADO DE ESCALERAS Y ASCENSORES</h2>
 <div class="map-wrap"><div class="map-elevation-wrap"><img alt="Mapa completo de la red de Subte y Premetro" class="map-elevation-base" src="assets/mapa.png"/><button aria-label="Inclán, Línea H: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="Inclán" style="--x:64.65%;--y:70.48%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Inclán:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="Pueyrredón, Línea D: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="Pueyrredón" style="--x:64.95%;--y:19.56%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Pueyrredón:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="San Pedrito, Línea A: Todos los medios de elevación se encuentran funcionando." class="elevation-marker elevation-marker--ok" data-station="San Pedrito" style="--x:24.06%;--y:66.71%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>San Pedrito:</strong><span>Todos los medios de elevación se encuentran funcionando.</span></span></button><button aria-label="Palermo, Línea D: La escalera N°2 no funciona." class="elevation-marker elevation-marker--off" data-station="Palermo" style="--x:40.47%;--y:15.5%;" type="button"><span class="elevation-dot"></span><span class="elevation-tooltip"><strong>Palermo:</strong><span>La escalera N°2 no funciona.</span></span></button></div></div>
 </section>
-<span class="section-anchor" id="tarifas"></span>
-<span class="section-anchor" id="nosotros"></span>
+
+
 
 <section class="novedades-real" id="novedades">
   <h2>NOVEDADES</h2>
@@ -275,11 +277,109 @@
   </div>
 </section>
 
+
+<span class="menu-anchor" id="tarifas"></span>
+<section class="desktop-fares" aria-label="Tarifas">
+  <div class="desktop-fares-photo">
+    <img src="assets/tarifas_molinetes.jpg" alt="">
+    <div class="desktop-fares-photo-overlay"></div>
+    <div class="desktop-fares-photo-copy">
+      <h2>TARIFAS</h2>
+      <p>Más viajás, menos pagás.</p>
+    </div>
+  </div>
+
+  <div class="desktop-fares-content">
+    <div class="desktop-fare-steps">
+      <article class="desktop-fare-step">
+        <div class="desktop-fare-step-head">
+          <span class="desktop-fare-dot"></span>
+          <strong>1 viaje</strong>
+        </div>
+        <div class="desktop-fare-price registered">
+          <small>Con SUBE registrada</small>
+          <b>$ 1.157,00</b>
+        </div>
+        <div class="desktop-fare-price unregistered">
+          <small>Con SUBE sin registrar</small>
+          <b>$ 1.839,63</b>
+        </div>
+      </article>
+
+      <article class="desktop-fare-step">
+        <div class="desktop-fare-step-head">
+          <span class="desktop-fare-dot"></span>
+          <strong>20 viajes</strong>
+        </div>
+        <div class="desktop-fare-price registered">
+          <small>Con SUBE registrada</small>
+          <b>$ 925,60</b>
+        </div>
+        <div class="desktop-fare-price unregistered">
+          <small>Con SUBE sin registrar</small>
+          <b>$ 1.471,70</b>
+        </div>
+      </article>
+
+      <article class="desktop-fare-step">
+        <div class="desktop-fare-step-head">
+          <span class="desktop-fare-dot"></span>
+          <strong>30 viajes</strong>
+        </div>
+        <div class="desktop-fare-price registered">
+          <small>Con SUBE registrada</small>
+          <b>$ 809,90</b>
+        </div>
+        <div class="desktop-fare-price unregistered">
+          <small>Con SUBE sin registrar</small>
+          <b>$ 1.287,74</b>
+        </div>
+      </article>
+
+      <article class="desktop-fare-step">
+        <div class="desktop-fare-step-head">
+          <span class="desktop-fare-dot"></span>
+          <strong>40 viajes</strong>
+        </div>
+        <div class="desktop-fare-price registered">
+          <small>Con SUBE registrada</small>
+          <b>$ 694,20</b>
+        </div>
+        <div class="desktop-fare-price unregistered">
+          <small>Con SUBE sin registrar</small>
+          <b>$ 1.103,78</b>
+        </div>
+      </article>
+    </div>
+
+    <article class="desktop-premetro-card">
+      <div class="desktop-premetro-head">
+        <span class="desktop-premetro-badge">P</span>
+        <div>
+          <strong>Premetro</strong>
+          <small>Sin combinación</small>
+        </div>
+      </div>
+      <div class="desktop-premetro-prices">
+        <span class="registered">
+          <small>SUBE registrada</small>
+          <b>$ 404,95</b>
+        </span>
+        <span class="unregistered">
+          <small>SUBE sin registrar</small>
+          <b>$ 643,87</b>
+        </span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<span class="menu-anchor" id="horarios"></span>
 <div class="lower-wrap">
 <h2 class="desktop-lower-heading desktop-tarifas-heading">TARIFAS</h2>
 <h2 class="desktop-lower-heading desktop-horarios-heading">HORARIOS</h2>
-<span class="lower-anchor lower-horarios" id="horarios"></span>
-<img alt="Tarifas y horarios" class="svgpart" src="lower_v29.webp?v=82"/>
+
+<img alt="Tarifas y horarios" class="svgpart" src="lower_v29.webp?v=83"/>
 <div class="mobile-lower">
 <section aria-label="Tarifas" class="mobile-fares">
 <h2>TARIFAS</h2>
@@ -514,4 +614,6 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 });
-</script><script src="carousel_clean.js?v=67"></script><script src="status-config.js?v=77"></script><script src="status-live.js?v=77"></script></body></html>
+</script><script src="carousel_clean.js?v=67"></script><script src="status-config.js?v=77"></script><script src="status-live.js?v=77"></script>
+<span class="menu-anchor" id="nosotros"></span>
+</body></html>
