@@ -4305,3 +4305,303 @@ img,svg{max-width:100%;height:auto}
     font-size:11px !important;
   }
 }
+
+/* ============================================================
+   V78 — NOVEDADES REHECHAS COMO CONTENIDO REAL
+   ============================================================ */
+
+.novedades-real{
+  width:100% !important;
+  background:#fff !important;
+  padding:54px 20px 60px !important;
+}
+
+.novedades-real h2{
+  margin:0 0 34px !important;
+  text-align:center !important;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:54px !important;
+  line-height:1 !important;
+  font-weight:500 !important;
+  color:#111 !important;
+}
+
+.novedades-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:2px !important;
+  max-width:1500px !important;
+  margin:0 auto !important;
+}
+
+.novedad-card{
+  position:relative !important;
+  overflow:hidden !important;
+  aspect-ratio:16/10 !important;
+  background:#111 !important;
+}
+
+.novedad-card img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  transition:transform .25s ease !important;
+}
+
+.novedad-card:hover img{
+  transform:scale(1.025) !important;
+}
+
+.novedad-gradient{
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.82) 0%,
+    rgba(0,0,0,.58) 26%,
+    rgba(0,0,0,.20) 52%,
+    rgba(0,0,0,0) 78%
+  ) !important;
+  pointer-events:none !important;
+}
+
+.novedad-card h3{
+  position:absolute !important;
+  left:28px !important;
+  right:28px !important;
+  bottom:24px !important;
+  margin:0 !important;
+  color:#fff !important;
+  font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+  font-size:clamp(20px,1.8vw,30px) !important;
+  line-height:1.08 !important;
+  font-weight:700 !important;
+  letter-spacing:-.02em !important;
+  text-wrap:balance !important;
+}
+
+@media(max-width:900px){
+  .novedades-real{
+    padding:38px 14px 44px !important;
+  }
+
+  .novedades-real h2{
+    font-size:40px !important;
+    margin-bottom:24px !important;
+  }
+
+  .novedades-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+    max-width:680px !important;
+  }
+
+  .novedad-card{
+    aspect-ratio:4/3 !important;
+    border-radius:0 !important;
+  }
+
+  .novedad-card h3{
+    left:20px !important;
+    right:20px !important;
+    bottom:18px !important;
+    font-size:24px !important;
+    line-height:1.08 !important;
+  }
+
+  .novedad-gradient{
+    background:linear-gradient(
+      to top,
+      rgba(0,0,0,.88) 0%,
+      rgba(0,0,0,.62) 30%,
+      rgba(0,0,0,.24) 56%,
+      rgba(0,0,0,0) 80%
+    ) !important;
+  }
+}
+
+@media(max-width:600px){
+  .novedades-real{
+    padding:30px 10px 38px !important;
+  }
+
+  .novedades-real h2{
+    font-size:34px !important;
+    margin-bottom:20px !important;
+  }
+
+  .novedad-card{
+    aspect-ratio:5/4 !important;
+  }
+
+  .novedad-card h3{
+    left:16px !important;
+    right:16px !important;
+    bottom:15px !important;
+    font-size:20px !important;
+  }
+}
+
+/* V79 — NOVEDADES: título igualado a los encabezados de MAPAS/HORARIOS */
+.novedades-real h2 {
+  font-size: 42px !important;
+}
+
+@media(max-width:900px){
+  .novedades-real h2 {
+    font-size: 32px !important;
+  }
+}
+
+@media(max-width:600px){
+  .novedades-real h2 {
+    font-size: 32px !important;
+  }
+}
+
+/* V80 — correcciones puntuales solicitadas */
+
+/* NOVEDADES: mismo tamaño visual que los títulos principales MAPAS/HORARIOS */
+#novedades h1,
+#novedades h2,
+#novedades .section-title,
+.novedades h1,
+.novedades h2,
+.novedades .section-title,
+.novedades-real h1,
+.novedades-real h2,
+.novedades-real .section-title {
+  font-size: 42px !important;
+  line-height: 1.05 !important;
+}
+
+/* Reducir el blanco entre HORARIOS y TARIFAS */
+#horarios,
+.horarios-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 28px !important;
+}
+#tarifas,
+.tarifas-section {
+  margin-top: 0 !important;
+  padding-top: 28px !important;
+}
+
+@media (max-width: 900px) {
+  #novedades h1,
+  #novedades h2,
+  #novedades .section-title,
+  .novedades h1,
+  .novedades h2,
+  .novedades .section-title,
+  .novedades-real h1,
+  .novedades-real h2,
+  .novedades-real .section-title {
+    font-size: 32px !important;
+  }
+
+  #horarios,
+  .horarios-section {
+    padding-bottom: 18px !important;
+  }
+  #tarifas,
+  .tarifas-section {
+    padding-top: 18px !important;
+  }
+}
+
+/* ============================================================
+   V81 — CORRECCIÓN REAL DE TÍTULO Y ESPACIADO
+   ============================================================ */
+
+/* Desktop section-title scale matched to HORARIOS / TARIFAS artwork */
+@media (min-width:901px){
+  section#novedades.novedades-real > h2{
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:64px !important;
+    line-height:1 !important;
+    font-weight:500 !important;
+    margin:0 0 34px !important;
+  }
+}
+
+/* Mobile keeps the established responsive scale */
+@media (max-width:900px){
+  section#novedades.novedades-real > h2{
+    font-size:34px !important;
+    line-height:1 !important;
+  }
+}
+
+/* ============================================================
+   V82 — TODOS LOS TÍTULOS DE SECCIÓN CON EL MISMO TAMAÑO
+   ESTACIONES / ESTADO DE ESCALERAS Y ASCENSORES /
+   NOVEDADES / TARIFAS / HORARIOS
+   ============================================================ */
+
+:root{
+  --section-title-desktop:54px;
+  --section-title-mobile:34px;
+}
+
+/* Desktop */
+@media (min-width:901px){
+  .stations > h2,
+  .map-section > h2,
+  section#novedades.novedades-real > h2,
+  .desktop-lower-heading{
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:var(--section-title-desktop) !important;
+    line-height:1 !important;
+    font-weight:500 !important;
+    letter-spacing:-1px !important;
+    text-align:center !important;
+  }
+
+  .lower-wrap{
+    position:relative !important;
+  }
+
+  .desktop-lower-heading{
+    display:block !important;
+    position:absolute !important;
+    left:0 !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    color:#111 !important;
+    z-index:5 !important;
+    pointer-events:none !important;
+    transform:translateY(-50%) !important;
+  }
+
+  /* Positions correspond to the original title locations in lower_v29.webp */
+  .desktop-tarifas-heading{
+    top:4.0% !important;
+  }
+
+  .desktop-horarios-heading{
+    top:31.4% !important;
+  }
+}
+
+/* Mobile/tablet: all five headings use exactly the same size too */
+@media (max-width:900px){
+  .stations > h2,
+  .map-section > h2,
+  section#novedades.novedades-real > h2,
+  .mobile-fares > h2,
+  .mobile-schedule > h2{
+    font-family:"Archivo","ArchivoWeb",Arial,sans-serif !important;
+    font-size:var(--section-title-mobile) !important;
+    line-height:1 !important;
+    font-weight:500 !important;
+    letter-spacing:-.5px !important;
+    text-align:center !important;
+  }
+
+  .desktop-lower-heading{
+    display:none !important;
+  }
+}
